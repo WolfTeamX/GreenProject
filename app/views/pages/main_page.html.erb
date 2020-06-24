@@ -1,0 +1,201 @@
+<div class="slideshow-container">
+
+  <div class="slide transparent">
+    <%= image_tag("solar_panels_banner.jpg", :class => "background-image") %>
+    <div class="slide-banner">
+      <div class="slide-box">
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide transparent">
+    <%= image_tag("tree.jpg", :class => "background-image") %>
+    <div class="slide-banner">
+      <div class="slide-box">
+        <h3>Phasellus</h3>
+        <p>Phasellus convallis congue tincidunt. Sed sed mauris eu sem tincidunt varius in a ligula.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide transparent">
+    <%= image_tag("wind-banner.png", :class => "background-image") %>
+    <div class="slide-banner">
+      <div class="slide-box">
+        <h3>Sed fringilla</h3>
+        <p>Sed fringilla at nibh et ultricies. Donec vitae mauris nec nibh varius vulputate vitae et nulla.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="text-align:center;">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<section>
+
+  <div class="main-header">
+    <div class="header-hover">
+      <h2>Nasza Oferta</h2>
+      <hr class="thematic-break">
+    </div>
+  </div>
+
+  <div class="row space-around">
+
+    <div class="box">
+
+      <div class="square">
+        <div class="border2">
+
+        </div>
+        <%= image_tag("panels_img.jpg", :alt => "Solar panels") %>
+      </div>
+
+      <h3>Fotowoltaika</h3>
+      <hr>
+
+      <p>
+        Praesent ullamcorper ligula id neque sollicitudin, a vulputate est aliquam. Convallis elit a.
+      </p>
+
+      <%= link_to "Zobacz więcej...", about_photovoltaics_path, class: "underline" %>
+
+    </div>
+
+    <div class="box">
+
+      <div class="square">
+        <div class="border2">
+
+        </div>
+        <%= image_tag("heat_pump.png", :alt => "Heat pump") %>
+      </div>
+
+      <h3>Pompy ciepła</h3>
+      <hr>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+      <%= link_to "Zobacz więcej...", about_heat_pump_path, class: "underline" %>
+
+    </div>
+
+    <div class="box">
+
+      <div class="square">
+        <div class="border2">
+
+        </div>
+        <%= image_tag("air_conditioner.png", :alt => "Air conditioning") %>
+      </div>
+
+      <h3>Klimatyzacja</h3>
+      <hr>
+
+      <p>
+        Phasellus nec aliquet arcu, vel congue orci. Aenean pulvinar nisi posuere ante blandit dictum.
+      </p>
+
+      <%= link_to "Zobacz więcej...", about_air_conditioning_path, class: "underline" %>
+
+    </div>
+
+  </div>
+</section>
+
+
+<div class="images-container">
+  <div class="row">
+
+      <div class="image-box left">
+        <div class="img-wrapper left">
+          <%= image_tag("housing.jpg", :alt => "House energy") %>
+        </div>
+        <div class="box-text">
+          <%= image_tag("icons/house-light.png", :alt => "House") %>
+          <h2>Dla domu</h2>
+        </div>
+      </div>
+
+    <div class="image-border">
+    </div>
+
+    <div class="image-box center no-overflow">
+      <div class="img-wrapper center">
+        <%= image_tag("industring.jpg", :alt => "Company") %>
+      </div>
+      <div class="box-text">
+        <%= image_tag("icons/company-light.png", :alt => "Company") %>
+        <h2>Dla firmy</h2>
+      </div>
+    </div>
+
+    <div class="image-border">
+    </div>
+
+    <div class="image-box right">
+      <div class="img-wrapper right">
+        <%= image_tag("farming.jpg", :alt => "Farm") %>
+      </div>
+      <div class="box-text">
+        <%= image_tag("icons/farm-light.png", :alt => "Farm") %>
+        <h2>Dla rolnictwa</h2>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="no-padding">
+
+  <div class="main-header">
+    <div class="header-hover">
+      <h2>Camelopardalis</h2>
+      <hr class="thematic-break">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="icon-box">
+        <%= image_tag("svg/user.svg", :class => "icon") %>
+      <h4>O nas</h4>
+      <p>
+        Maecenas libero dolor, auctor eget lectus id.
+      </p>
+    </div>
+    <div class="icon-box">
+      <%= image_tag("svg/award.svg", class: "icon") %>
+      <h4>Certyfikaty i szkolenia</h4>
+      <p>
+        Nam porttitor augue ac finibus consequat.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="icon-box">
+      <%= image_tag("svg/file-text.svg", class: "icon") %>
+      <h4>Sprzedaż</h4>
+      <p>
+        Etiam nisi diam, imperdiet a pulvinar vel.
+      </p>
+    </div>
+    <div class="icon-box">
+      <%= image_tag("svg/tool.svg", class: "icon") %>
+      <h4>Realizacje</h4>
+      <p>
+        Proin purus augue, blandit vulputate tellus.
+      </p>
+    </div>
+  </div>
+
+</section>
