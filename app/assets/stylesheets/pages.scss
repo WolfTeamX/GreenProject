@@ -171,6 +171,7 @@ section {
 
 .main-header {
   text-align: -webkit-center;
+  text-align: -moz-center;
   padding: 0 0 40px 0;
 }
 
@@ -463,6 +464,7 @@ section {
 .image-box {
   z-index: 3;
   text-align: -webkit-center;
+  text-align: -moz-center;
   width: 33.33%;
   height: 440px;
   color: whitesmoke;
@@ -734,6 +736,7 @@ footer {
 .icon-box {
   width: 25%;
   text-align: -webkit-center;
+  text-align: -moz-center;
   text-align: center;
   padding: 0 6% 40px 6%;
   max-width: 220px;
