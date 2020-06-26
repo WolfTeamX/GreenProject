@@ -49,8 +49,8 @@
     <div class="footer-content">
       <%= image_tag("green_evolution_light.png", :alt => "Green Motion", :class => "logo") %>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce scelerisque nisl at diam aliquam dapibus.
-        Vestibulum vestibulum id purus quis sagittis. Aliquam egestas commodo urna in ultricies.
+        <%= (Setting.exists? id: 1) ? (Setting.find(1)).short_description : nil %>
+
       </p>
     </div>
     <div class="footer-content">
@@ -58,9 +58,7 @@
         Kontakt:
       </h2>
       <p>
-        Telefon: +1 123 456 789<br>
-        Email: example@dogs.com<br>
-        Adres: Champ de Mars, 5 Avenue Anatole France, 75007 Paris
+        <%= (Setting.exists? id: 1) ? (Setting.find(1)).address : nil %>
       </p>
     </div>
   </div>

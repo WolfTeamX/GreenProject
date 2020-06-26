@@ -1,1 +1,7 @@
-test
+<%= form_tag do %>
+  <%= label_tag :short_description, 'short_description' %>
+  <%= text_area_tag :short_description, @current_setting ? @current_setting.short_description : nil %>
+  <%= label_tag :contact, 'contact' %>
+  <%= text_area_tag :contact,  @current_setting ? @current_setting.address : nil %>
+  <%= submit_tag :submit %>
+<% end %>
