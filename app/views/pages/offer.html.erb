@@ -1,7 +1,18 @@
-<div class="page-header">
-  <%= image_tag "allow/solars.jpg" %>
+<!--<div class="page-header">
+  <%#= image_tag "allow/solars.jpg" %>
   <div class="header-text">
     Oferta
+  </div>
+</div>-->
+
+<div class="page-cover">
+  <%= image_tag "allow/panels_cover.jpeg" %>
+  <div class="header-text">
+    Oto rozwiązania jakie proponujemy
+    <br>
+    <div>
+      <i id="scroll-arrow" class="arrow"></i>
+    </div>
   </div>
 </div>
 
@@ -22,6 +33,7 @@
         <p>Instalacje fotowoltaiczne zamieniają koty na energie słoneczną na prąd elektryczny, dostarczając energie tam,
           gdzie jej potrzebujesz.</p>
         <%= link_to "O fotowoltaice...", about_photovoltaics_path, class: "ghost-button" %>
+        <%= link_to "Sprzedaż...", about_photovoltaics_path, class: "ghost-button"  %>
       </div>
     </div>
     <div class="fifty no-padding offer-height">

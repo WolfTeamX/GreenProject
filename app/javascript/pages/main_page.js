@@ -99,4 +99,13 @@ document.addEventListener("turbolinks:load", function () {
             closeModal();
         });
     }
+
+    var arrow = document.getElementById("scroll-arrow");
+
+    if(arrow)
+    {
+        arrow.onclick = function () {
+            //var target =
+        }
+    }
 });
