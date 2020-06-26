@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/oferta/o_klimatyzacji/' => 'pages#about_air_conditioning', as: :about_air_conditioning
 
   get '/admin/' => 'admin#admin_index', as: :admin_index
+  get '/admin/settings' => 'admin#settings', as: :settings
 
   as :user do
     get 'login/' => 'devise/sessions#new', as: :login
