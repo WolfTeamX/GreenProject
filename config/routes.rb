@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/realizacje/' => 'pages#realizations', as: :realizations
   get '/sprzedaż/' => 'pages#sale', as: :sale
   get '/kontakt/' => 'pages#contact', as: :contact
+  post '/kontakt/' => 'pages#contact', as: :contact_post
+
 
   get '/oferta/o_fotowoltaice/' => 'pages#about_photovoltaics', as: :about_photovoltaics
   get '/oferta/o_pompie_ciepla/' => 'pages#about_heat_pump', as: :about_heat_pump

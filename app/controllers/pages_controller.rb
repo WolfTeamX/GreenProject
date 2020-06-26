@@ -1,5 +1,6 @@
 # Controls all pages on the website
 class PagesController < ApplicationController
+  require 'mail'
   layout 'main_layout'
 
   def main_page
@@ -23,7 +24,16 @@ class PagesController < ApplicationController
   end
 
   def contact
-    # Do sth here...
+    if request.post?
+      text = params[:name] + '<br />' + params[:phone] + '<br />' + params[:email] + '<br />' + params[:content]
+      mail = Mail.new do
+        from    'greenevolution@greenevolution.pl'
+        to      'kanewers@gmail.com'
+        subject 'Wiadomość z systemu GreenEvolution'
+        body    text
+      end
+      mail.deliver
+    end
   end
 
   def about_photovoltaics

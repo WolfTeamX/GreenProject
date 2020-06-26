@@ -22,19 +22,16 @@
         <h4>Odpowiemy tak szybko jak to możliwe</h4>
       </div>
       <div class="input">
-        <label for="name"></label>
-        <input type="text" id="name" name="name" placeholder="Twoje imię"><br><br>
-
-        <label for="email"></label>
-        <input type="text" id="email" name="email" placeholder="Twój email"><br><br>
-
-        <label for="phone"></label>
-        <input type="number" id="phone" name="phone" placeholder="Twój telefon (opcjonalnie)"><br><br>
-
-        <label for="content"></label>
-        <textarea id="content" name="content" placeholder="Treść wiadomości"></textarea><br><br>
-
-        <a class="ghost-button">"Wyślij wiadomość"</a>
+        <%= form_tag do %>
+          <%= label_tag :name, 'name' %>
+          <%= text_field_tag :name %>
+          <%= label_tag :email, 'email' %>
+          <%= email_field_tag :email %>
+          <%= telephone_field_tag :phone %>
+          <%= label_tag :content, 'content' %>
+          <%= text_area_tag :content %>
+          <%= submit_tag :submit %>
+      <% end %>
       </div>
     </div>
   </div>

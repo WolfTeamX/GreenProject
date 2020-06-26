@@ -1003,33 +1003,35 @@ footer {
   }
 
   .input {
-    text-align: center;
+    form {
+      text-align: center;
 
-    input {
-      width: 90%;
-      height: 30px;
-    }
+      input {
+        width: 90%;
+        height: 30px;
+      }
 
-    input[type="text"] {
-      padding: 4px 10px 4px 10px;
-      font-size: 20px;
-    }
+      input[type="text"] {
+        padding: 4px 10px 4px 10px;
+        font-size: 20px;
+      }
 
-    input[type="number"] {
-      padding: 4px 10px 4px 10px;
-      font-size: 20px;
-    }
+      input[type="number"] {
+        padding: 4px 10px 4px 10px;
+        font-size: 20px;
+      }
 
-    textarea {
-      width: 90%;
-      height: 300px;
-      padding: 4px 10px 4px 10px;
-      font-size: 20px;
-      resize: none;
-    }
+      textarea {
+        width: 90%;
+        height: 300px;
+        padding: 4px 10px 4px 10px;
+        font-size: 20px;
+        resize: none;
+      }
 
-    .ghost-button {
-      padding: .8rem 30%;
+      .ghost-button {
+        padding: .8rem 30%;
+      }
     }
   }
 }
