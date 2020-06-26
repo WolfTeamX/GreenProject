@@ -912,7 +912,7 @@ footer {
   img {
     position: relative;
     filter: blur(2px) brightness(0.6);
-    max-height: 400px;
+    max-height: 320px;
     width: 100%;
     object-fit: cover;
     transition: 2s filter;
@@ -927,7 +927,7 @@ footer {
     width: 100%;
     text-align: center;
     left: 0;
-    top: 190px;
+    top: 140px;
     color: whitesmoke;
     font-size: 56px;
     text-shadow: 0 0 2px #0A0C35, 0 1px 3px #0A0C35, 0 2px 4px #0A0C35, 0 3px 5px #0A0C35;
