@@ -18,8 +18,10 @@ pickle-email-*.html
 !/tmp/.keep
 
 # Ignore JetBrains IDE stuff
-.idea/*
-.generators/*
+.idea/**
+.generators/**
+.idea
+.generators
 
 # Ignore database
 GreenEvolution_development
