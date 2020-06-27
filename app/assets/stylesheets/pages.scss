@@ -5,6 +5,7 @@
 $nav-height: 60px;
 $easeOut: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 $green: rgb(68, 177, 21);
+$green-semi: rgba(68, 177, 21, .9);
 $square-size: 150px;
 $square-margin: 5px + $square-size/5;
 $border-size: 5px;
@@ -173,6 +174,7 @@ section {
   text-align: -webkit-center;
   text-align: -moz-center;
   padding: 0 0 40px 0;
+  transform: translateY(-10%);
 }
 
 .header-hover {
@@ -567,6 +569,10 @@ section {
   overflow: hidden;
 }
 
+.no-transform {
+  transform: none;
+}
+
 .image-border {
   width: 5px;
   background-color: white;
@@ -948,6 +954,21 @@ footer {
     filter: brightness(.5);
   }
 
+  .cut-in {
+    &:after {
+      content:'';
+      width: 0;
+      height: 0;
+      border-left: 49vw solid transparent;
+      border-right: 49vw solid transparent;
+      border-bottom: 11.3vw solid #fafafa;
+      position:absolute;
+      left:50%;
+      top:80%;
+      transform: translateX(-50%);
+    }
+  }
+
   .header-text {
     position: absolute;
     width: 100%;
@@ -956,23 +977,27 @@ footer {
     text-align: center;
     font-size: 62px;
     color: whitesmoke;
-    font-weight: bold;
     text-shadow: 0 0 2px #0A0C35, 0 1px 3px #0A0C35, 0 2px 4px #0A0C35;
-    margin: 0 0 50px 0;
+
+    .header-background {
+      background: $green-semi;
+      margin: 0 20% 0 20%;
+      padding: 1.2% 0 1.2% 0;
+    }
   }
 
   .arrow {
     border: solid whitesmoke;
     border-width: 0 10px 10px 0;
     display: inline-block;
-    margin: 16% 0 0 0;
+    margin: 8% 0 0 0;
     padding: 20px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     transition: padding .4s;
 
     &:hover {
-      padding: 24px;
+      padding: 28px;
     }
   }
 }
@@ -1262,6 +1287,18 @@ footer {
     p {
       font-size: 12px;
       max-width: 100%;
+    }
+  }
+
+  .page-cover {
+    img {
+      height: 60vh;
+    }
+
+    .cut-in {
+      &:after {
+        top: 55%;
+      }
     }
   }
 }
