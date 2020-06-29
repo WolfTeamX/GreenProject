@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@import "turbolinks";
+
 $nav-height: 60px;
 $easeOut: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 $green: rgb(68, 177, 21);
