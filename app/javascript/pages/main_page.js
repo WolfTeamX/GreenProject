@@ -107,7 +107,11 @@ document.addEventListener("turbolinks:load", function () {
     if(arrow)
     {
         arrow.onclick = function () {
-            //var target =
+            var target = document.getElementById("scroll-target");
+            if(target)
+            {
+                target.scrollIntoView({ behavior: 'smooth', inline: 'start'});
+            }
         }
     }
 });
