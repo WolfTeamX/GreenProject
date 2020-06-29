@@ -1,3 +1,5 @@
+Turbolinks.setProgressBarDelay(1);
+
 document.addEventListener("turbolinks:load", function () {
     var slideIndex = 0;
     showSlides();

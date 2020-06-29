@@ -16,3 +16,4 @@ require("@rails/activestorage").start();
 // const imagePath = (name) => images(name, true)
 
 require("../../javascript/pages/main_page");
+require("../../javascript/pages/turbolinks-fade");

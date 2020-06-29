@@ -41,27 +41,29 @@
   <div class="nav-right">
   </div>
 </nav>
-<%= yield %>
-<footer>
-  <div class="footer-background">
-  </div>
-  <div class="row space-evenly">
-    <div class="footer-content">
-      <%= image_tag("green_evolution_light.png", :alt => "Green Motion", :class => "logo") %>
-      <p>
-        <%= (Setting.exists? id: 1) ? (Setting.find(1)).short_description : nil %>
+<div id="yield" class="yield fading">
+  <%= yield %>
+  <footer>
+    <div class="footer-background">
+    </div>
+    <div class="row space-evenly">
+      <div class="footer-content">
+        <%= image_tag("green_evolution_light.png", :alt => "Green Motion", :class => "logo") %>
+        <p>
+          <%= (Setting.exists? id: 1) ? (Setting.find(1)).short_description : nil %>
 
-      </p>
+        </p>
+      </div>
+      <div class="footer-content">
+        <h2>
+          Kontakt:
+        </h2>
+        <p>
+          <%= (Setting.exists? id: 1) ? (Setting.find(1)).address : nil %>
+        </p>
+      </div>
     </div>
-    <div class="footer-content">
-      <h2>
-        Kontakt:
-      </h2>
-      <p>
-        <%= (Setting.exists? id: 1) ? (Setting.find(1)).address : nil %>
-      </p>
-    </div>
-  </div>
-</footer>
+  </footer>
+</div>
 </body>
 </html>
