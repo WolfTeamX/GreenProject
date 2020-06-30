@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@import "trix/dist/trix";
+@import "../../../node_modules/trix/dist/trix";
 @import "./actiontext.scss";
 
 *,

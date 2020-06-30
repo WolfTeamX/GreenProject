@@ -17,3 +17,6 @@ require("@rails/activestorage").start();
 
 require("../../javascript/pages/main_page");
 require("../../javascript/pages/turbolinks-fade");
+
+require("trix")
+require("@rails/actiontext")
