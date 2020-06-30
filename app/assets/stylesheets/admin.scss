@@ -116,3 +116,12 @@ i {
   font-weight: lighter;
   font-size: 3em;
 }
+
+a:link {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+a {
+  color: lightgray;
+}

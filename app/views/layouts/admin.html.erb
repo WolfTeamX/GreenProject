@@ -11,14 +11,19 @@
 <header class="admin-statusbar flex--center">
   <span id="username"><i class="fa fa-user"></i>  <%= link_to('Wyloguj', destroy_user_session_path, method: :delete) %></span>
 </header>
-
 <nav class="admin-sidepanel">
   <ul>
     <li>
-      <a href="/admin/"><i class="fa fa-pencil-square-o"></i>Strona główna</a>
+      <%= link_to admin_index_path do %>
+        <i class="fa fa-pencil-square-o"></i>
+        Strona główna
+      <% end %>
     </li>
     <li>
-      <i class="fa fa-pencil-square-o"></i>O nas
+      <%= link_to admin_index_path do %>
+        <i class="fa fa-pencil-square-o"></i>
+        O nas
+      <% end %>
     </li>
     <li>
       <i class="fa fa-pencil-square-o"></i>Oferta
