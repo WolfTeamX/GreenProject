@@ -32,7 +32,7 @@ document.addEventListener("turbolinks:load", function () {
         setTimeout(showSlides, 7000); // Change image every 2 seconds
     }
 
-    var gallery = document.getElementById("gallery");
+    /*var gallery = document.getElementById("gallery");
 
     if(gallery)
     {
@@ -100,7 +100,7 @@ document.addEventListener("turbolinks:load", function () {
         close.addEventListener("click", function () {
             closeModal();
         });
-    }
+    }*/
 
     var arrow = document.getElementById("scroll-arrow");
 

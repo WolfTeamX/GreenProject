@@ -1,4 +1,5 @@
 var displayLoader = false;
+var lastVisitedPage = "";
 
 document.addEventListener("turbolinks:load", function () {
     var pageYield = document.getElementById("yield");
@@ -16,9 +17,13 @@ document.addEventListener("turbolinks:before-visit", function (event) {
         return;
 
     event.preventDefault();
+    if(lastVisitedPage === event.data.url)
+        return;
+
     pageYield.classList.add("fading");
     setTimeout(function () {
         Turbolinks.visit(event.data.url);
+        lastVisitedPage = event.data.url;
         displayLoader = true;
         setTimeout(function () {
             var loader = document.getElementById("css-loader");
