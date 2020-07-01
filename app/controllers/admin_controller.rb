@@ -6,7 +6,6 @@ class AdminController < ApplicationController
 
   def admin_index
     # something
-
   end
 
   def settings
@@ -18,5 +17,15 @@ class AdminController < ApplicationController
       setting.save
     end
     @current_setting = (Setting.exists? id: 1) ? Setting.find(1) : nil
+  end
+
+  def realizations
+    if request.post?
+      params[:images].each do |image|
+        realization = Realization.new
+        realization.image.attach(image)
+        realization.save
+      end
+    end
   end
 end

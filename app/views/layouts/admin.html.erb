@@ -3,7 +3,8 @@
   <title>Zarządzanie stroną</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <%= stylesheet_link_tag "admin", media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body class="admin">
@@ -29,7 +30,9 @@
       <i class="fa fa-pencil-square-o"></i>Oferta
     </li>
     <li>
-      <i class="fa fa-pencil-square-o"></i>Realizacje
+      <%= link_to realizations_admin_path do %>
+        <i class="fa fa-pencil-square-o"></i>Realizacje
+        <% end %>
     </li>
     <li>
       <i class="fa fa-pencil-square-o"></i>Kontakt

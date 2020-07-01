@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get '/admin/' => 'admin#admin_index', as: :admin_index
   get '/admin/settings' => 'admin#settings', as: :settings
   post '/admin/settings' => 'admin#settings', as: :settings_post
+  get '/admin/realizations' => 'admin#realizations', as: :realizations_admin
+  post '/admin/realizations' => 'admin#realizations', as: :realizations_admin_post
 
   as :user do
     get 'login/' => 'devise/sessions#new', as: :login
