@@ -14,32 +14,71 @@
 
 
 <section class="no-padding">
-  <div class="container">
-    <div class="main-header">
-      <div id="scroll-target" class="header-hover">
-        <h2>Wypełnij formularz kontaktowy:</h2>
-        <hr class="thematic-break">
-      </div>
-    </div>
 
-    <div class="contact-form">
-      <div class="text">
-        <h3>Formularz kontaktowy</h3>
-        <hr>
-        <h4>Odpowiemy tak szybko jak to możliwe</h4>
-      </div>
-      <div class="input">
-        <%= form_tag do %>
-          <%= label_tag :name, 'name' %>
-          <%= text_field_tag :name %>
-          <%= label_tag :email, 'email' %>
-          <%= email_field_tag :email %>
-          <%= telephone_field_tag :phone %>
-          <%= label_tag :content, 'content' %>
-          <%= text_area_tag :content %>
-          <%= submit_tag :submit %>
-      <% end %>
-      </div>
+  <div class="main-header">
+    <div id="scroll-target" class="header-hover">
+      <h2>Wypełnij formularz kontaktowy:</h2>
+      <hr class="thematic-break">
     </div>
   </div>
+
+  <div class="contact-form">
+
+
+    <div class="row">
+
+      <div class="main-form">
+        <div class="text">
+          <h3>Napisz do nas</h3>
+
+          <br>
+<!--          <h4>Odpowiemy tak szybko jak to możliwe</h4>-->
+        </div>
+        <div class="input">
+          <%= form_tag do %>
+            <%= label_tag :content, 'Treść' %> <br>
+            <%= text_area_tag :content, '', autocomplete: "off", placeholder: "Tutaj wpisz treść wiadomości..." %>
+
+            <div class="row">
+              <div>
+                <%= label_tag :name, 'Twoje imię' %>
+                <%= text_field_tag :name %>
+              </div>
+
+              <div>
+                <%= label_tag :email, 'Twój email' %>
+                <%= email_field_tag :email %>
+              </div>
+            </div>
+            <%= submit_tag 'Wyślij wiadomość' %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="side-form">
+        <div class="text">
+          <p>Nie chcesz pisać?</p>
+          <p>Są też inne formy kontaktu!</p>
+          <br><br><br>
+          <h3>Informacje</h3>
+          <div class="row">
+            <div><p>Adres: </p></div>
+            <div><p>701  Bird Spring Lane Houston</p></div>
+          </div>
+          <div class="row">
+            <div>Telefon: </div>
+            <div>281-556-7749</div>
+          </div>
+          <p>Telefon: 281-556-7749</p>
+          <p>Email: sample@email.com</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
 </section>
+
+

@@ -1,0 +1,30 @@
+.container {
+  padding: 0 15%;
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.row {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  .col {
+    float: left;
+    width: 25%;
+
+    img {
+      width: 16vw;
+      height: 16vh;
+      object-fit: cover;
+      transition: .3s;
+
+      &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    }
+  }
+}

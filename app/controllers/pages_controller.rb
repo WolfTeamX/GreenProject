@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   end
 
   def realizations
-    # Do sth here...
+    @realizations = Realization.all
   end
 
   def sale

@@ -4,6 +4,7 @@
 
 @import "turbolinks";
 @import "loader";
+@import "main";
 @import "../../../node_modules/tobii/dist/css/tobii";
 
 $nav-height: 60px;
@@ -201,29 +202,6 @@ section {
   .left {
     float: left;
     width: 33.33%;
-  }
-}
-
-.row {
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-
-  .col {
-    float: left;
-    width: 25%;
-
-    img {
-      width: 16vw;
-      height: 16vh;
-      object-fit: cover;
-      transition: .3s;
-
-      &:hover {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-    }
   }
 }
 
@@ -814,14 +792,6 @@ footer {
   }
 }
 
-.container {
-  padding: 0 15%;
-
-  p {
-    font-size: 20px;
-  }
-}
-
 .about-container {
   padding: 0 15%;
   text-align: center;
@@ -1064,19 +1034,38 @@ footer {
 
 .contact-form {
   margin: 0 auto 0 auto;
-  background-color: whitesmoke;
-  width: 50%;
-  height: 760px;
+  width: 70%;
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.65);
+  border-radius: 10px;
+
+  .side-form {
+    width: 45%;
+    background-color: $green;
+    border-radius: 0 10px 10px 0;
+    .text {
+      margin: 0 20px 0 20px;
+      text-transform: uppercase;
+      color: rgb(15,15,15);
+      p {
+        font-size: 20px;
+      }
+      .row {
+        div {
+          margin: 0 10% 0 10%;
+        }
+      }
+    }
+  }
+
   .text {
-    margin-left: 25px;
-    padding: 25px 0 0 0;
+    padding: 35px 0 10px 0;
 
     h3 {
       margin: 0;
       font-size: 32px;
-      color: #555555;
+      color: #1a1a1a;
       text-transform: uppercase;
+      font-weight: bold;
     }
 
     h4 {
@@ -1090,31 +1079,56 @@ footer {
     }
   }
 
+  .main-form {
+    padding: 0 0 0 5%;
+  }
   .input {
     form {
-      text-align: center;
-
+      label {
+        font-size: 18px;
+        color: rgb(140,140,140);
+      }
       input {
         width: 90%;
         height: 30px;
       }
 
       input[type="text"] {
-        padding: 4px 10px 4px 10px;
+        border-width: 1px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
         font-size: 20px;
+        margin: 10px 0 0 0;
+        border-color: rgb(210, 210, 210);
+      }
+
+      input[type="email"] {
+        border-width: 1px;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        font-size: 20px;
+        margin: 10px 0 0 0;
+        border-color: rgb(210, 210, 210);
       }
 
       input[type="number"] {
-        padding: 4px 10px 4px 10px;
         font-size: 20px;
+      }
+
+      input[type="submit"] {
+        margin: 5% 0 5% 0;
       }
 
       textarea {
         width: 90%;
-        height: 300px;
-        padding: 4px 10px 4px 10px;
+        height: 15vh;
+        padding: 12px 10px 12px 10px;
+        margin: 10px 0 26px 0;
         font-size: 20px;
         resize: none;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        border-color: rgb(210, 210, 210);
       }
 
       .ghost-button {

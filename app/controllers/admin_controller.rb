@@ -20,12 +20,15 @@ class AdminController < ApplicationController
   end
 
   def realizations
+    @realizations = Realization.all
+
     if request.post?
       params[:images].each do |image|
         realization = Realization.new
         realization.image.attach(image)
         realization.save
       end
+      redirect_back(fallback_location: realizations_admin_path)
     end
   end
 end
