@@ -1,3 +1,30 @@
 <h1>
-  Document Title
+  Strona główna
 </h1>
+<hr><br>
+
+<h2>Dodaj slajd</h2><br>
+<%= form_with url: create_slide_path do |f| %>
+  <p>Tytuł:</p>
+  <%= f.text_field :title %><br><br>
+  <p>Treść:</p>
+  <%= f.text_area :content %><br><br>
+  <%= f.file_field :image, direct_upload: true %><br><br>
+  <%= f.submit "Zapisz slajd" %>
+<% end %>
+<br><br>
+<h2>Obecne slajdy:</h2><br>
+<div>
+  <%= will_paginate @slides %><br>
+  <% if @slides.count == 0 %>
+    <h3>Obecnie nie istnieją żadne slajdy.</h3>
+  <% end %>
+  <% @slides.each do |slide| %>
+    <h3><%= slide.title %></h3><br>
+    <p><%= slide.content %></p><br>
+    <%= image_tag rails_blob_path(slide.image), class: "slide-image" %>
+    <%= button_to "Usuń slajd", remove_slide_path(slide), method: :delete,
+                  class: "button button-error", data: {confirm: "Jesteś pewien, że chcesz usunąć ten slajd?"} %>
+  <% end %>
+</div>
+

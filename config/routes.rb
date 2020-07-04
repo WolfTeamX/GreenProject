@@ -22,6 +22,11 @@ Rails.application.routes.draw do
   post '/admin/realizations' => 'admin#realizations', as: :realizations_admin_post
   delete '/admin/realizations' => 'admin#destroy_realization', as: :remove_realization
 
+  # Slides
+  post '/admin/' => 'slides#create', as: :create_slide
+  post '/admin/' => 'slides#update', as: :update_slide
+  delete '/admin/' => 'slides#destroy', as: :remove_slide
+
   as :user do
     get 'login/' => 'devise/sessions#new', as: :login
     get 'logout/' => 'devise/sessions#destroy', as: :logout

@@ -14,32 +14,34 @@
 </header>
 <nav class="admin-sidepanel">
   <ul>
-    <li>
       <%= link_to admin_index_path do %>
+        <li>
         <i class="fa fa-pencil-square-o"></i>
         Strona główna
+        </li>
       <% end %>
-    </li>
-    <li>
       <%= link_to admin_index_path do %>
+      <li>
         <i class="fa fa-pencil-square-o"></i>
         O nas
+      </li>
       <% end %>
-    </li>
     <li>
       <i class="fa fa-pencil-square-o"></i>Oferta
     </li>
-    <li>
       <%= link_to realizations_admin_path do %>
+      <li>
         <i class="fa fa-pencil-square-o"></i>Realizacje
+      </li>
         <% end %>
-    </li>
     <li>
       <i class="fa fa-pencil-square-o"></i>Kontakt
     </li>
-    <li>
-      <a href="/admin/settings"><i class="fa fa-pencil-square-o"></i>Ustawienia ogólne</a>
-    </li>
+    <%= link_to settings_path do %>
+      <li>
+        <i class="fa fa-pencil-square-o"></i>Ustawienia ogólne
+      </li>
+    <% end %>
   </ul>
 </nav>
 <main class="admin-main">

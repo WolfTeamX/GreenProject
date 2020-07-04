@@ -5,7 +5,7 @@ class AdminController < ApplicationController
   layout 'admin'
 
   def admin_index
-    # something
+    @slides = Slide.paginate(page: params[:page], per_page: 1)
   end
 
   def settings
@@ -20,7 +20,6 @@ class AdminController < ApplicationController
   end
 
   def realizations
-    #@realizations = Realization.all
     @realizations = Realization.paginate(page: params[:page], per_page: 12).order('created_at DESC')
     if request.post?
       params[:images].each do |image|
