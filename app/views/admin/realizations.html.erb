@@ -1,8 +1,12 @@
+<h2>Dodaj realizację:</h2><br>
 <%= form_with url: realizations_admin_post_path do |f| %>
   <%= f.file_field :images, multiple: true, direct_upload: true %>
   <%= f.submit %>
 <% end %>
+<br><br>
+<h1>Obecne realizacje:</h1><br>
 <div id="gallery" class="container">
+  <%= will_paginate @realizations %>
   <% @realizations.in_groups_of(4, false).each do |group| %>
     <div class="row">
       <% group.each do |realization| %>
@@ -10,6 +14,8 @@
           <%= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
           <%= image_tag rails_blob_path(realization.image) %>
           <% end %>
+          <%= button_to "Usuń realizację", remove_realization_path(realization), method: :delete,
+                        class: "button button-error", data: {confirm: "Jesteś pewien, że chcesz usunąć te realizację?"} %>
         </div>
       <% end %>
     </div>

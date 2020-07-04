@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   post '/admin/settings' => 'admin#settings', as: :settings_post
   get '/admin/realizations' => 'admin#realizations', as: :realizations_admin
   post '/admin/realizations' => 'admin#realizations', as: :realizations_admin_post
+  delete '/admin/realizations' => 'admin#destroy_realization', as: :remove_realization
 
   as :user do
     get 'login/' => 'devise/sessions#new', as: :login

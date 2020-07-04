@@ -20,8 +20,8 @@ class AdminController < ApplicationController
   end
 
   def realizations
-    @realizations = Realization.all
-
+    #@realizations = Realization.all
+    @realizations = Realization.paginate(page: params[:page], per_page: 12).order('created_at DESC')
     if request.post?
       params[:images].each do |image|
         realization = Realization.new
@@ -30,5 +30,11 @@ class AdminController < ApplicationController
       end
       redirect_back(fallback_location: realizations_admin_path)
     end
+  end
+
+  def destroy_realization
+    realization = Realization.find(params[:format])
+    realization.destroy
+    redirect_back(fallback_location: realizations_admin_path)
   end
 end
