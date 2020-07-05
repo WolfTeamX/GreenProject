@@ -12,7 +12,7 @@ class AdminController < ApplicationController
   end
 
   def add_slide
-    @slide = Slide.find(params[:format])
+    # something
   end
 
   def settings
