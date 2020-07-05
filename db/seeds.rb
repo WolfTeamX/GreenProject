@@ -10,3 +10,19 @@ user.email = 'admin@admin.admin'
 user.password = 'zaq1@WSX'
 user.password_confirmation = 'zaq1@WSX'
 user.save!
+
+MainOffer.create([{ title: "Fotowoltaika",
+                    description: "Praesent ullamcorper ligula id neque sollicitudin, a vulputate est aliquam.
+                                  Convallis elit a."} ,
+                  { title: "Pompy ciepła",
+                    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+                  { title: "Klimatyzacja",
+                    description: "Phasellus nec aliquet arcu, vel congue orci.
+                                  Aenean pulvinar nisi posuere ante blandit dictum."}])
+
+DesignatedCustomersImage.create([{text: "Dla domu"}, {text: "Dla firmy"}, {text: "Dla rolnictwa"}])
+
+Icon.create([{title: "O nas", description: "Maecenas libero dolor, auctor eget lectus id."},
+             {title: "Certyfikaty i szkolenia", description: "Nam porttitor augue ac finibus consequat. "},
+             {title: "Sprzedaż", description: "Etiam nisi diam, imperdiet a pulvinar vel. "},
+             {title: "Realizacje", description: "Proin purus augue, blandit vulputate tellus."}])
