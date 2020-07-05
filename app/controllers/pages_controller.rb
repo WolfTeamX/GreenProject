@@ -4,7 +4,10 @@ class PagesController < ApplicationController
   layout 'main_layout'
 
   def main_page
-    # Do sth here...
+    @slides = Slide.all
+    @offers = MainOffer.all
+    @images = DesignatedCustomersImage.all
+    @icons = Icon.all
   end
 
   def about_us
