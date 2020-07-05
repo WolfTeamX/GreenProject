@@ -28,6 +28,12 @@ module GreenEvolution
       delivery_method :smtp, address: 'localhost', port: 1027
     end
 
+    # Allow svg uploads to Active Storage
+    ActiveStorage::Engine.config
+        .active_storage
+        .content_types_to_serve_as_binary
+        .delete('image/svg+xml')
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
