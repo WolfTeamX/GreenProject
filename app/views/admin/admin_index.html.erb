@@ -2,17 +2,6 @@
   Strona główna
 </h1>
 <hr><br>
-
-<h2>Dodaj slajd</h2><br>
-<%= form_with url: create_slide_path do |f| %>
-  <p>Tytuł:</p>
-  <%= f.text_field :title %><br><br>
-  <p>Treść:</p>
-  <%= f.text_area :content %><br><br>
-  <%= f.file_field :image, direct_upload: true %><br><br>
-  <%= f.submit "Zapisz slajd" %>
-<% end %>
-<br><br>
 <h2>Obecne slajdy:</h2><br>
 <div>
   <%= will_paginate @slides %><br>
@@ -26,5 +15,59 @@
     <%= button_to "Usuń slajd", remove_slide_path(slide), method: :delete,
                   class: "button button-error", data: {confirm: "Jesteś pewien, że chcesz usunąć ten slajd?"} %>
   <% end %>
+  <br><br><%= link_to "Dodaj slajd", add_slide_path, class: "button button-success" %>
 </div>
-
+<br><hr>
+<h2>Oferta</h2><br>
+<div class="row">
+  <% if @main_offers.count == 0 %>
+    <h3>Obecnie nie istnieją żadne oferty.</h3>
+  <% else %>
+    <% @main_offers.each do |offer| %>
+      <div class="thirty offer">
+        <h3><%= offer.title %></h3>
+        <p><%= offer.description %></p>
+        <% if offer.image.attached? %>
+          <%= image_tag rails_blob_path(offer.image), class: "slide-image" %>
+        <% end %>
+        <br><br>
+        <%= link_to "Edytuj ofertę", edit_offer_path(offer), class: "button button-warning" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<br><hr>
+<h2>Zdjęcia</h2><br>
+<div class="row">
+  <% if @images.count == 0 %>
+  <h3>Zdjęcia nie istnieją</h3>
+  <% end %>
+  <% @images.each do |image| %>
+    <div class="thirty offer">
+      <h3><%= image.text %></h3>
+      <% if image.image.attached? %>
+        <%= image_tag rails_blob_path(image.image), class: "slide-image" %>
+      <% end %>
+      <br><br>
+      <%= link_to "Edytuj zdjęcie", edit_designated_image_path(image), class: "button button-warning" %>
+    </div>
+  <% end %>
+</div>
+<br><hr>
+<h2>Inne informacje
+</h2><br>
+<% @icons.in_groups_of(2, false).each do |group| %>
+  <div class="row">
+    <% group.each do |icon| %>
+      <div class="icon-box">
+        <% if icon.image.attached? %>
+          <%= image_tag rails_blob_path(icon.image), class: "icon" %>
+        <% end %>
+        <h4><%= icon.title %></h4>
+        <p><%= icon.description %></p><br><br>
+        <%= link_to "Edytuj ikonkę", edit_icon_path(icon), class: "button button-warning" %>
+      </div>
+      <br><br>
+    <% end %>
+  </div>
+<% end %>

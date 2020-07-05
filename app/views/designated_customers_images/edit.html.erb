@@ -1,0 +1,14 @@
+<h1>Edytuj obraz</h1>
+<hr><br>
+<h2><%= @image.text %></h2><br>
+<% if @image.image.attached? %>
+  <%= image_tag rails_blob_path(@image.image), class: "slide-image" %>
+<% end %>
+<br><hr><br>
+<%= form_with url: update_designated_image_path do |f| %>
+  <p>Tekst:</p><br>
+  <%= f.text_field :text, value: @image.text %><br><br>
+  <%= f.file_field :image, direct_upload: true %><br><br>
+  <%= f.hidden_field :id, value: @image.id %>
+  <%= f.submit "Zapisz obraz", class: "button button-success" %>
+<% end %>
