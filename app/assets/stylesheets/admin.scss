@@ -114,11 +114,15 @@ i {
   background: white;
   box-shadow: 0 2px 1px rgba(0, 0, 0, .1);
   text-align: center;
-}
 
-.admin-main h1 {
-  font-weight: lighter;
-  font-size: 3em;
+  div, h1, h2, h3 {
+    margin: 10px 0 10px 0;
+  }
+
+  h1 {
+    font-weight: lighter;
+    font-size: 3em;
+  }
 }
 
 a:link {

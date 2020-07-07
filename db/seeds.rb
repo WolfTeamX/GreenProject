@@ -26,3 +26,7 @@ Icon.create([{title: "O nas", description: "Maecenas libero dolor, auctor eget l
              {title: "Certyfikaty i szkolenia", description: "Nam porttitor augue ac finibus consequat. "},
              {title: "Sprzedaż", description: "Etiam nisi diam, imperdiet a pulvinar vel. "},
              {title: "Realizacje", description: "Proin purus augue, blandit vulputate tellus."}])
+
+paragraphs = AboutUsParagraph.create([{title: "Kim jesteśmy?"}, {title: "Co oferujemy?"}, {title: "Co gwarantujemy?"}])
+about_us_page = AboutUsPage.create
+about_us_page.about_us_paragraphs = paragraphs

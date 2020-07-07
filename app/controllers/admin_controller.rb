@@ -43,4 +43,16 @@ class AdminController < ApplicationController
     realization.destroy
     redirect_back(fallback_location: realizations_admin_path)
   end
+
+  def about_us
+    @paragraphs = AboutUsParagraph.all
+  end
+
+  def offer
+
+  end
+
+  def contact
+
+  end
 end

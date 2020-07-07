@@ -1,0 +1,51 @@
+<h1>
+  O nas
+</h1>
+<hr>
+<% paragraph = @paragraphs.first %>
+<section class="no-padding">
+  <div class="row space-evenly">
+    <div class="fifty">
+      <% if paragraph.image.attached? %>
+        <%= image_tag rails_blob_path(paragraph.image), class: "side-image" %>
+      <% end %>
+    </div>
+    <div class="fifty about-title align-right">
+      <h2 class="about-title"><%= paragraph.title %></h2>
+      <hr class="float-right"><br>
+      <p><%= paragraph.content %></p>
+    </div>
+  </div>
+</section>
+
+<% paragraph = @paragraphs.second %>
+<section class="no-padding">
+  <div class="row space-evenly">
+    <div class="fifty about-title align-left">
+      <h2 class="about-title"><%= paragraph.title %></h2>
+      <hr class="float-left"><br>
+      <p><%= paragraph.content %></p>
+    </div>
+    <div class="fifty">
+      <% if paragraph.image.attached? %>
+        <%= image_tag rails_blob_path(paragraph.image), class: "side-image" %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<% paragraph = @paragraphs.third %>
+<section class="no-padding">
+  <div class="row space-evenly">
+    <div class="fifty">
+      <% if paragraph.image.attached? %>
+        <%= image_tag rails_blob_path(paragraph.image), class: "side-image" %>
+      <% end %>
+    </div>
+    <div class="fifty about-title align-right">
+      <h2 class="about-title"><%= paragraph.title %></h2>
+      <hr class="float-right"><br>
+      <p><%= paragraph.content %></p>
+    </div>
+  </div>
+</section>
