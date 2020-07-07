@@ -1,0 +1,19 @@
+<div class="admin-edit">
+  <h1>Edytuj element</h1>
+  <hr><br>
+  <h2><%= @paragraph.title %></h2><br>
+  <p><%= @paragraph.content %></p>
+  <% if @paragraph.image.attached? %>
+    <%= image_tag rails_blob_path(@paragraph.image), class: "slide-image" %>
+  <% end %>
+  <br>
+  <%= form_with url: update_about_us_paragraph_path do |f| %>
+    <p>Tytuł:</p><br>
+    <%= f.text_field :title, value: @paragraph.title %><br><br>
+    <p>Treść:</p><br>
+    <%= f.rich_text_area :content, value: @paragraph.content %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.hidden_field :id, value: @paragraph.id %>
+    <%= f.submit "Zapisz element", class: "button button-success" %>
+  <% end %>
+</div>

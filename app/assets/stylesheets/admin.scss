@@ -4,10 +4,9 @@
 
 @import "../../../node_modules/trix/dist/trix";
 @import "./actiontext.scss";
-@import "main";
 @import "../../../node_modules/tobii/dist/css/tobii";
 
-*,
+/**,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -123,134 +122,102 @@ i {
     font-weight: lighter;
     font-size: 3em;
   }
-}
+}*/
 
-a:link {
-  text-decoration: none !important;
-  cursor: pointer;
-}
-
-a {
-  color: lightgray;
-}
-
-hr {
-  width: 60%;
-  color: rgb(190,190,190);
-  margin: 10px auto 30px auto;
-}
-
-input[type=text], textarea {
-  box-shadow: inset 0 1px 3px #ddd;
-  padding: .5em .6em;
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  width: 300px;
-  height: 40px;
-}
-
-textarea {
-  width: 50%;
-  height: 200px;
-}
-
-// Slides
-.slide-image {
-  width: 24vw;
-  height: 24vh;
-  object-fit: cover;
-  transition: .3s;
-
-  &:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-}
-
-// Offer
-.offer {
-  width: 33%;
-
-  p {
-    margin: 0 0 10px 0;
-  }
-  img {
-    margin: 0 0 10px 0;
-  }
-}
-
-// Icons
-.icon-box {
-  width: 25%;
-  text-align: -webkit-center;
-  text-align: -moz-center;
+.admin-edit {
   text-align: center;
-  margin: 0 6% 40px 6%;
-  max-width: 220px;
+  text-align: -moz-center;
+  padding: 100px 0 0 0;
 
-  .icon {
-    filter: none;
-    -webkit-transition : -webkit-filter 150ms linear
+  a:link {
+    text-decoration: none !important;
+    cursor: pointer;
   }
 
-  h4 {
-    color: #333333;
-    font-size: 22px;
-    font-weight: 300;
-    margin: 0;
+  a {
+    color: lightgray;
   }
 
-  p {
-    color: #666666;
-    font-size: 16px;
+  hr {
+    width: 60%;
+    color: rgb(190,190,190);
+    margin: 10px auto 30px auto;
   }
 
-  &:hover {
-    .icon {
-      filter: brightness(0) saturate(100%) invert(61%) sepia(21%) saturate(6861%) hue-rotate(65deg) brightness(96%) contrast(84%);
+  input[type=text], textarea {
+    box-shadow: inset 0 1px 3px #ddd;
+    padding: .5em .6em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 300px;
+    height: 40px;
+  }
+
+  textarea {
+    width: 50%;
+    height: 200px;
+  }
+
+  // Slides
+  .slide-image {
+    width: 24vw;
+    height: 24vh;
+    object-fit: cover;
+    transition: .3s;
+
+    &:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-    cursor: pointer;
   }
-}
 
-// Realizations page
-.col {
-  margin: 25px;
-}
+  // Offer
+  .offer {
+    width: 33%;
 
-.button {
-  font-size: 100%;
-  padding: .5em 1em;
-  border: transparent;
-  text-decoration: none;
-  margin: 10px 0 0 0;
-}
-
-.button-error {
-  background: rgb(202, 60, 60);
-  color: white;
-
-  &:hover {
-    background: rgb(180, 70, 70);
-    cursor: pointer;
+    p {
+      margin: 0 0 10px 0;
+    }
+    img {
+      margin: 0 0 10px 0;
+    }
   }
-}
 
-.button-success {
-  background: rgb(0,128,0);
-  color: white;
+  // Icons
+  .icon-box {
+    width: 25%;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    text-align: center;
+    margin: 0 6% 40px 6%;
+    max-width: 220px;
 
-  &:hover {
-    background: rgb(30,158,30);
-    cursor: pointer;
+    .icon {
+      filter: none;
+      -webkit-transition : -webkit-filter 150ms linear
+    }
+
+    h4 {
+      color: #333333;
+      font-size: 22px;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    p {
+      color: #666666;
+      font-size: 16px;
+    }
+
+    &:hover {
+      .icon {
+        filter: brightness(0) saturate(100%) invert(61%) sepia(21%) saturate(6861%) hue-rotate(65deg) brightness(96%) contrast(84%);
+      }
+      cursor: pointer;
+    }
   }
-}
 
-.button-warning {
-  background: rgb(190, 190,10);
-  color: white;
-
-  &:hover {
-    background: rgb(205,205,25);
-    cursor: pointer;
+  // Realizations page
+  .col {
+    margin: 25px;
   }
 }

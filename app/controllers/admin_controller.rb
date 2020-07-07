@@ -5,8 +5,8 @@ class AdminController < ApplicationController
   layout 'admin'
 
   def admin_index
-    @slides = Slide.paginate(page: params[:page], per_page: 1)
-    @main_offers = MainOffer.all
+    @slides = Slide.all
+    @offers = MainOffer.all
     @images = DesignatedCustomersImage.all
     @icons = Icon.all
   end
@@ -28,23 +28,10 @@ class AdminController < ApplicationController
 
   def realizations
     @realizations = Realization.paginate(page: params[:page], per_page: 9).order('created_at DESC')
-    if request.post?
-      params[:images].each do |image|
-        realization = Realization.new
-        realization.image.attach(image)
-        realization.save
-      end
-      redirect_back(fallback_location: realizations_admin_path)
-    end
-  end
-
-  def destroy_realization
-    realization = Realization.find(params[:format])
-    realization.destroy
-    redirect_back(fallback_location: realizations_admin_path)
   end
 
   def about_us
+    @page = AboutUsPage.find(1)
     @paragraphs = AboutUsParagraph.all
   end
 

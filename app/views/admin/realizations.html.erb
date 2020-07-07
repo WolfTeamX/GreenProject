@@ -1,23 +1,67 @@
-<h2>Dodaj realizację:</h2><br>
-<%= form_with url: realizations_admin_post_path do |f| %>
-  <%= f.file_field :images, multiple: true, direct_upload: true %>
-  <%= f.submit %>
-<% end %>
+<div class="page-cover">
+  <%= link_to about_us_admin_path do %>
+    <div class="side-control">
+      <p>Zmień<br>zdjęcie</p>
+    </div>
+  <% end %>
+  <div class="cut-in">
+    <%= image_tag "allow/technic_work.jpg" %>
+  </div>
+  <div class="header-text">
+    <div class="header-background">
+      Portfolio
+    </div>
+    <div id="scroll-arrow" class="arrow-hover">
+      <i class="arrow"></i>
+    </div>
+  </div>
+</div>
+<div class="middle-button">
+  <%= link_to "Dodaj nową realizację", add_realization_path, class: "button button-success" %>
+</div>
+<section class="no-padding">
+  <div class="main-header">
+    <div id="scroll-target" class="header-hover">
+      <h2>Zobacz nasze realizacje</h2>
+      <hr class="thematic-break">
+    </div>
+  </div>
+  <div id="gallery" class="container">
+    <%= will_paginate @realizations %>
+    <% @realizations.in_groups_of(4, false).each do |group| %>
+      <div class="row">
+        <% group.each do |realization| %>
+          <div class="col">
+            <%= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
+              <%= image_tag rails_blob_path(realization.image) %>
+            <% end %>
+            <br><br><%= link_to "Usuń realizację", remove_realization_path(realization), class: "button button-success" %><br><br>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</section>
+<!--<h2>Dodaj realizację:</h2><br>
+<%#= form_with url: realizations_admin_post_path do |f| %>
+  <%#= f.file_field :images, multiple: true, direct_upload: true %>
+  <%#= f.submit %>
+<%# end %>
 <br><br>
 <h1>Obecne realizacje:</h1><br>
 <div id="gallery" class="container">
-  <%= will_paginate @realizations %>
-  <% @realizations.in_groups_of(4, false).each do |group| %>
+  <%#= will_paginate @realizations %>
+  <%# @realizations.in_groups_of(4, false).each do |group| %>
     <div class="row">
-      <% group.each do |realization| %>
+      <%# group.each do |realization| %>
         <div class="col">
-          <%= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
-          <%= image_tag rails_blob_path(realization.image) %>
-          <% end %>
-          <%= button_to "Usuń realizację", remove_realization_path(realization), method: :delete,
+          <%#= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
+          <%#= image_tag rails_blob_path(realization.image) %>
+          <%# end %>
+          <#%= button_to "Usuń realizację", remove_realization_path(realization), method: :delete,
                         class: "button button-error", data: {confirm: "Jesteś pewien, że chcesz usunąć te realizację?"} %>
         </div>
-      <% end %>
+      <%# end %>
     </div>
-  <% end %>
-</div>
+  <%# end %>
+</div>-->

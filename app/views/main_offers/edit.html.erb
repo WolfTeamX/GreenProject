@@ -1,17 +1,19 @@
-<h1>Edytuj ofertę</h1>
-<hr><br>
-<h2><%= @offer.title %></h2><br>
-<p><%= @offer.description %></p>
-<% if @offer.image.attached? %>
-  <%= image_tag rails_blob_path(@offer.image), class: "slide-image" %>
-<% end %>
-<br><hr><br>
-<%= form_with url: update_offer_path do |f| %>
-  <p>Tytuł:</p><br>
-  <%= f.text_field :title, value: @offer.title %><br><br>
-  <p>Treść:</p><br>
-  <%= f.text_area :description, value: @offer.description %><br><br>
-  <%= f.file_field :image, direct_upload: true %><br><br>
-  <%= f.hidden_field :id, value: @offer.id %>
-  <%= f.submit "Zapisz ofertę", class: "button button-success" %>
-<% end %>
+<div class="admin-edit">
+  <h1>Edytuj ofertę</h1>
+  <hr><br>
+  <h2><%= @offer.title %></h2><br>
+  <p><%= @offer.description %></p>
+  <% if @offer.image.attached? %>
+    <%= image_tag rails_blob_path(@offer.image), class: "slide-image" %>
+  <% end %>
+  <br>
+  <%= form_with url: update_offer_path do |f| %>
+    <p>Tytuł:</p><br>
+    <%= f.text_field :title, value: @offer.title %><br><br>
+    <p>Treść:</p><br>
+    <%= f.text_area :description, value: @offer.description %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.hidden_field :id, value: @offer.id %>
+    <%= f.submit "Zapisz ofertę", class: "button button-success" %>
+  <% end %>
+</div>

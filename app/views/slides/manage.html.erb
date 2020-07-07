@@ -1,0 +1,18 @@
+<div class="admin-edit">
+  <h1>Zarządzaj slajdami:</h1>
+  <hr>
+  <div>
+    <%= will_paginate @slides %>
+    <% if @slides.count == 0 %>
+      <h3>Obecnie nie istnieją żadne slajdy.</h3>
+    <% end %>
+    <% @slides.each do |slide| %>
+      <h3><%= slide.title %></h3>
+      <p><%= slide.content %></p>
+      <%= image_tag rails_blob_path(slide.image), class: "slide-image" %>
+      <%= button_to "Usuń slajd", remove_slide_path(slide), method: :delete,
+                    class: "button button-error", data: {confirm: "Jesteś pewien, że chcesz usunąć ten slajd?"} %>
+    <% end %>
+    <br><br><%= link_to "Dodaj slajd", add_slide_path, class: "button button-success" %>
+  </div>
+</div>

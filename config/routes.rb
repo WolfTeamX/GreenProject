@@ -29,21 +29,26 @@ Rails.application.routes.draw do
 
   # Slides
   get '/admin/dodaj-slajd' => 'admin#add_slide', as: :add_slide
-  post '/admin/' => 'slides#create', as: :create_slide
-  post '/admin/' => 'slides#update', as: :update_slide
+  get '/admin/zarzadzaj-slajdami' => 'slides#manage', as: :manage_slides
+  get '/admin/edytuj-slajd' => 'slides#edit', as: :edit_slide
+  post '/admin/stworz-slajd' => 'slides#create', as: :create_slide
+  post '/admin/zaktualizuj-slajd' => 'slides#update', as: :update_slide
   delete '/admin/' => 'slides#destroy', as: :remove_slide
 
   # Realizations
   get '/admin/realizations' => 'admin#realizations', as: :realizations_admin
-  post '/admin/realizations' => 'admin#realizations', as: :realizations_admin_post
-  delete '/admin/realizations' => 'admin#destroy_realization', as: :remove_realization
+  get '/admin/realizations/dodaj' => 'realizations#add', as: :add_realization
+  post '/admin/realizations/stworz' => 'realizations#create', as: :create_realization
+  delete '/admin/realizations' => 'realizations#destroy_realization', as: :remove_realization
 
   # Other settings
   get '/admin/settings' => 'admin#settings', as: :settings
   post '/admin/settings' => 'admin#settings', as: :settings_post
 
   # About us
-  get '/admin/about_us' => 'admin#about_us', as: :about_us_admin
+  get '/admin/o-nas' => 'admin#about_us', as: :about_us_admin
+  get '/admin/o-nas/edytuj' => 'about_us_paragraphs#edit', as: :edit_about_us_paragraph
+  post '/admin/o-nas/edytuj' => 'about_us_paragraphs#update', as: :update_about_us_paragraph
 
   # Offers
   get '/admin/offer' => 'admin#offer', as: :offer_admin
