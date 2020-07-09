@@ -7,8 +7,8 @@
   <% @slides.each do |slide| %>
     <div class="slide transparent">
       <% if slide.image.attached? %>
-      <%= image_tag rails_blob_path(slide.image), class: "background-image" %>
-        <% end %>
+        <%= image_tag rails_blob_path(slide.image), class: "background-image" %>
+      <% end %>
       <div class="slide-banner">
         <div class="slide-box">
           <h3><%= slide.title %></h3>
@@ -38,8 +38,8 @@
         <div class="border2">
         </div>
         <% if offer.image.attached? %>
-        <%= image_tag rails_blob_path(offer.image) %>
-          <% end %>
+          <%= image_tag rails_blob_path(offer.image) %>
+        <% end %>
       </div>
       <h3><%= offer.title %></h3>
       <hr>
@@ -53,8 +53,8 @@
         <div class="border2">
         </div>
         <% if offer.image.attached? %>
-        <%= image_tag rails_blob_path(offer.image) %>
-          <% end %>
+          <%= image_tag rails_blob_path(offer.image) %>
+        <% end %>
       </div>
       <h3><%= offer.title %></h3>
       <hr>
@@ -68,8 +68,8 @@
         <div class="border2">
         </div>
         <% if offer.image.attached? %>
-        <%= image_tag rails_blob_path(offer.image) %>
-          <% end %>
+          <%= image_tag rails_blob_path(offer.image) %>
+        <% end %>
       </div>
       <h3><%= offer.title %></h3>
       <hr>
@@ -85,8 +85,8 @@
     <div class="image-box left">
       <div class="img-wrapper left">
         <% if image.image.attached? %>
-        <%= image_tag rails_blob_path(image.image) %>
-          <% end %>
+          <%= image_tag rails_blob_path(image.image) %>
+        <% end %>
       </div>
       <div class="box-text">
         <%= image_tag("icons/house-light.png", :alt => "House") %>
@@ -100,8 +100,8 @@
     <div class="image-box center no-overflow">
       <div class="img-wrapper center">
         <% if image.image.attached? %>
-        <%= image_tag rails_blob_path(image.image) %>
-          <% end %>
+          <%= image_tag rails_blob_path(image.image) %>
+        <% end %>
       </div>
       <div class="box-text">
         <%= image_tag("icons/company-light.png", :alt => "Company") %>
@@ -115,8 +115,8 @@
     <div class="image-box right">
       <div class="img-wrapper right">
         <% if image.image.attached? %>
-        <%= image_tag rails_blob_path(image.image) %>
-          <% end %>
+          <%= image_tag rails_blob_path(image.image) %>
+        <% end %>
       </div>
       <div class="box-text">
         <%= image_tag("icons/farm-light.png", :alt => "Farm") %>
@@ -137,7 +137,9 @@
     <div class="row">
       <% group.each do |icon| %>
         <div class="icon-box">
-          <%= image_tag rails_blob_path(icon.image), class: "icon" %>
+          <% if icon.image.attached? %>
+            <%= image_tag rails_blob_path(icon.image), class: "icon" %>
+          <% end %>
           <h4><%= icon.title %></h4>
           <p><%= icon.description %></p>
           <%= link_to "Edytuj ikonkę", edit_icon_path(icon), class: "button button-success" %>
