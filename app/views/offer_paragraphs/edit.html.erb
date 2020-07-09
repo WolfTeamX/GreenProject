@@ -1,0 +1,22 @@
+<div class="admin-edit">
+  <h1>Edytuj ofertę</h1>
+  <hr><br>
+  <h3><%= @offer.header %></h3><br>
+  <h4><%= @offer.title %></h4>
+  <p><%= @offer.content %></p>
+  <% if @offer.image.attached? %>
+    <%= image_tag rails_blob_path(@offer.image), class: "slide-image" %>
+  <% end %>
+  <br>
+  <%= form_with url: update_offer_paragraph_path, model: @offer, method: :update do |f| %>
+    <p>Nagłówek:</p><br>
+    <%= f.text_field :header %>
+    <p>Tytuł:</p><br>
+    <%= f.text_field :title %><br><br>
+    <p>Treść:</p><br>
+    <%= f.rich_text_area :content %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.hidden_field :id %>
+    <%= f.submit "Zapisz ofertę", class: "button button-success" %>
+  <% end %>
+</div>

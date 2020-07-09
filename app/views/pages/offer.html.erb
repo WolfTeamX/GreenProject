@@ -11,7 +11,6 @@
     </div>
   </div>
 </div>
-
 <section class="no-padding no-margin smoke-section">
   <div class="main-header">
     <div id="scroll-target" class="header-hover">
@@ -19,56 +18,55 @@
       <hr class="thematic-break">
     </div>
   </div>
-
+</section>
+<% offer = @offers.first %>
+<section class="no-padding no-margin">
   <div class="row offer-height">
     <div class="fifty no-padding">
       <div class="offer align-left">
-        <h4>Energia z gwiazd</h4>
-        <h2>Fotowoltaika</h2>
+        <h4><%= offer.header %></h4>
+        <h2><%= offer.title %></h2>
         <hr class="float-left">
-        <p>Instalacje fotowoltaiczne zamieniają koty na energie słoneczną na prąd elektryczny, dostarczając energie tam,
-          gdzie jej potrzebujesz.</p>
+        <p><%= offer.content %></p>
         <%= link_to "O fotowoltaice...", about_photovoltaics_path, class: "ghost-button" %>
-        <%= link_to "Sprzedaż...", about_photovoltaics_path, class: "ghost-button"  %>
       </div>
     </div>
     <div class="fifty no-padding offer-height">
-      <%= image_tag 'wunder-panels.jpg', class: 'offer-img offer-height' %>
+      <%= image_tag rails_blob_path(offer.image), class: "offer-img offer-height" if offer.image.attached? %>
     </div>
   </div>
 </section>
-
-
+<% offer = @offers.second %>
 <section class="no-padding no-margin">
   <div class="row offer-height">
     <div class="fifty no-padding offer-height">
-      <%= image_tag 'heat_pump.jpg', class: 'offer-img offer-height' %>
+      <%= image_tag rails_blob_path(offer.image), class: "offer-img offer-height" if offer.image.attached? %>
     </div>
     <div class="fifty no-padding">
       <div class="offer align-right">
-        <h4>Korzystne ogrzewanie</h4>
-        <h2>Pompy ciepła</h2>
+        <h4><%= offer.header %></h4>
+        <h2><%= offer.title %></h2>
         <hr class="float-right">
-        <p>Komfortowe i tanie w eksploatacji źródło ogrzewania.<br> Jej długa żywotność zapewnia ocieplenie na wiele lat.</p>
+        <p><%= offer.content %></p>
         <%= link_to "O pompach ciepła...", about_heat_pump_path, class: "ghost-button" %>
       </div>
     </div>
   </div>
 </section>
-
+<% offer = @offers.third %>
 <section class="no-padding no-margin">
   <div class="row offer-height">
     <div class="fifty no-padding">
       <div class="offer align-left">
-        <h4>Wysoka jakość</h4>
-        <h2>Klimatyzacja</h2>
+        <h4><%= offer.header %></h4>
+        <h2><%= offer.title %></h2>
         <hr class="float-left">
-        <p>Stabilizuje temperatuje i wilgotność w otoczeniu, zapewniając komfort i zrównoważony bilans cieplny.</p>
+        <p><%= offer.content %></p>
         <%= link_to "O klimatyzacji...", about_air_conditioning_path, class: "ghost-button" %>
       </div>
     </div>
     <div class="fifty no-padding offer-height">
-      <%= image_tag 'air_conditioning.png', class: 'offer-img offer-height' %>
+      <%= image_tag rails_blob_path(offer.image), class: "offer-img offer-height" if offer.image.attached? %>
     </div>
   </div>
 </section>

@@ -51,7 +51,9 @@ Rails.application.routes.draw do
   post '/admin/o-nas/edytuj' => 'about_us_paragraphs#update', as: :update_about_us_paragraph
 
   # Offers
-  get '/admin/offer' => 'admin#offer', as: :offer_admin
+  get '/admin/oferta' => 'admin#offer', as: :offer_admin
+  get '/admin/oferta/edytuj' => 'offer_paragraphs#edit', as: :edit_offer_paragraph
+  post '/admin/oferta/edytuj' => 'offer_paragraphs#update', as: :update_offer_paragraph
 
   # Contact
   get '/admin/contact' => 'admin#contact', as: :contact_admin

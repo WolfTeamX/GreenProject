@@ -36,7 +36,7 @@ class AdminController < ApplicationController
   end
 
   def offer
-
+    @offers = OfferParagraph.all
   end
 
   def contact

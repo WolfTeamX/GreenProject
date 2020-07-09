@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   end
 
   def offer
-    # Do sth here...
+    @offers = OfferParagraph.all
   end
 
   def realizations
