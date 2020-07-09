@@ -5,6 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+OfferParagraph.create([{header: "Energia z gwiazd", title: "Fotowoltaika",
+                        content: "Instalacje fotowoltaiczne zamieniają energie słoneczną na prąd elektryczny,
+                                 dostarczając energie tam, gdzie jej potrzebujesz."},
+                       {header: "Korzystne ogrzewanie", title: "Pompy ciepła",
+                        content: "Komfortowe i tanie w eksploatacji źródło ogrzewania.
+                                 Jej długa żywotność zapewnia ocieplenie na wiele lat."},
+                       {header: "Wysoka jakość", title: "Klimatyzacja",
+                        content: "Stabilizuje temperatuje i wilgotność w otoczeniu,
+                                  zapewniając komfort i zrównoważony bilans cieplny."}])
+
 user = User.new
 user.email = 'admin@admin.admin'
 user.password = 'zaq1@WSX'
