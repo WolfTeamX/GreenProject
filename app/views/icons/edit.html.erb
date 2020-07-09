@@ -1,21 +1,23 @@
-<h1>Edytuj ikonkę</h1>
-<hr><br>
-<div class="row">
-  <div class="icon-box">
-    <% if @icon.image.attached? %>
-      <%= image_tag rails_blob_path(@icon.image), class: "icon" %>
-    <% end %>
-    <h4><%= @icon.title %></h4>
-    <p><%= @icon.description %></p><br><br>
+<div class="admin-edit">
+  <h1>Edytuj ikonkę</h1>
+  <hr><br>
+  <div class="row">
+    <div class="icon-box">
+      <% if @icon.image.attached? %>
+        <%= image_tag rails_blob_path(@icon.image), class: "icon" %>
+      <% end %>
+      <h4><%= @icon.title %></h4>
+      <p><%= @icon.description %></p><br><br>
+    </div>
   </div>
+  <br><hr><br>
+  <%= form_with url: update_icon_path do |f| %>
+    <p>Tytuł:</p><br>
+    <%= f.text_field :title, value: @icon.title %><br><br>
+    <p>Treść:</p><br>
+    <%= f.text_area :description, value: @icon.description %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.hidden_field :id, value: @icon.id %>
+    <%= f.submit "Zapisz ikonkę", class: "button button-success" %>
+  <% end %>
 </div>
-<br><hr><br>
-<%= form_with url: update_icon_path do |f| %>
-  <p>Tytuł:</p><br>
-  <%= f.text_field :title, value: @icon.title %><br><br>
-  <p>Treść:</p><br>
-  <%= f.text_area :description, value: @icon.description %><br><br>
-  <%= f.file_field :image, direct_upload: true %><br><br>
-  <%= f.hidden_field :id, value: @icon.id %>
-  <%= f.submit "Zapisz ikonkę", class: "button button-success" %>
-<% end %>
