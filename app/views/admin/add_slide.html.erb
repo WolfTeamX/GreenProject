@@ -1,12 +1,14 @@
-<h1>
-  Dodaj slajd
-</h1>
-<hr><br>
-<%= form_with url: create_slide_path do |f| %>
-  <p>Tytuł:</p>
-  <%= f.text_field :title %><br><br>
-  <p>Treść:</p>
-  <%= f.text_area :content %><br><br>
-  <%= f.file_field :image, direct_upload: true %><br><br>
-  <%= f.submit "Zapisz slajd", class: "button button-success" %>
-<% end %>
+<div class="admin-edit">
+  <h1>
+    Dodaj slajd
+  </h1>
+  <hr><br>
+  <%= form_with url: create_slide_path do |f| %>
+    <p>Tytuł:</p>
+    <%= f.text_field :title %><br><br>
+    <p>Treść:</p>
+    <%= f.text_area :content %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.submit "Zapisz slajd", class: "button button-success" %>
+  <% end %>
+</div>
