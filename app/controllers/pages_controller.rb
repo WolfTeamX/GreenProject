@@ -11,14 +11,17 @@ class PagesController < ApplicationController
   end
 
   def about_us
-    # Do sth here...
+    @page = SubPage.find(1)
+    @paragraphs = AboutUsParagraph.all
   end
 
   def offer
+    @page = SubPage.find(2)
     @offers = OfferParagraph.all
   end
 
   def realizations
+    @page = SubPage.find(3)
     @realizations = Realization.all
   end
 
@@ -27,6 +30,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @page = SubPage.find(4)
     if request.post?
       text = params[:name] + '<br />' + params[:phone] + '<br />' + params[:email] + '<br />' + params[:content]
       mail = Mail.new do

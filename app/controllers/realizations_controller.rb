@@ -17,6 +17,7 @@ class RealizationsController < ApplicationController
 
   def destroy_realization
     realization = Realization.find(params[:format])
+    abort realization.inspect
     realization.destroy
     redirect_to realizations_admin_path
   end

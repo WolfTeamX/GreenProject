@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   get '/admin/icon' => 'icons#edit', as: :edit_icon
   post '/admin/icon' => 'icons#update', as: :update_icon
 
+  # SubPages
+  get '/admin/edytuj-podstrone' => 'sub_pages#edit', as: :edit_sub_page
+  post '/admin/edytuj-podstrone' => 'sub_pages#update', as: :update_sub_page
+
   # Slides
   get '/admin/dodaj-slajd' => 'admin#add_slide', as: :add_slide
   get '/admin/zarzadzaj-slajdami' => 'slides#manage', as: :manage_slides
@@ -39,7 +43,7 @@ Rails.application.routes.draw do
   get '/admin/realizations' => 'admin#realizations', as: :realizations_admin
   get '/admin/realizations/dodaj' => 'realizations#add', as: :add_realization
   post '/admin/realizations/stworz' => 'realizations#create', as: :create_realization
-  delete '/admin/realizations' => 'realizations#destroy_realization', as: :remove_realization
+  post '/admin/realizations' => 'realizations#destroy_realization', as: :remove_realization
 
   # Other settings
   get '/admin/settings' => 'admin#settings', as: :settings

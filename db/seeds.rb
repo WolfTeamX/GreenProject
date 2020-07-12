@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+SubPage.create([{title: "O nas"}, {title: "Nasza oferta"}, {title: "Portfolio"}, {title: "Kontakt"}])
+
 OfferParagraph.create([{header: "Energia z gwiazd", title: "Fotowoltaika",
                         content: "Instalacje fotowoltaiczne zamieniają energie słoneczną na prąd elektryczny,
                                  dostarczając energie tam, gdzie jej potrzebujesz."},
@@ -38,4 +41,3 @@ Icon.create([{title: "O nas", description: "Maecenas libero dolor, auctor eget l
              {title: "Realizacje", description: "Proin purus augue, blandit vulputate tellus."}])
 
 AboutUsParagraph.create([{title: "Kim jesteśmy?"}, {title: "Co oferujemy?"}, {title: "Co gwarantujemy?"}])
-AboutUsPage.create

@@ -1,0 +1,16 @@
+<div class="admin-edit">
+  <h1>Edytuj podstronę</h1>
+  <hr><br>
+  <h2><%= @page.title %></h2><br>
+  <% if @page.image.attached? %>
+    <%= image_tag rails_blob_path(@page.image), class: "slide-image" %>
+  <% end %>
+  <br>
+  <%= form_with url: update_sub_page_path do |f| %>
+    <p>Tytuł:</p><br>
+    <%= f.text_field :title, value: @page.title %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.hidden_field :id, value: @page.id %>
+    <%= f.submit "Zapisz podstronę", class: "button button-success" %>
+  <% end %>
+</div>

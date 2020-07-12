@@ -1,15 +1,15 @@
 <div class="page-cover">
-  <%= link_to manage_slides_path do %>
+  <%= link_to edit_sub_page_path(@page.id) do %>
     <div class="side-control">
       <p>Zmień<br>zdjęcie</p>
     </div>
   <% end %>
   <div class="cut-in">
-    <%= image_tag "allow/panels_cover.jpeg" %>
+    <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   </div>
   <div class="header-text">
     <div class="header-background">
-      Nasza oferta
+      <%= @page.title %>
     </div>
     <div id="scroll-arrow" class="arrow-hover">
       <i class="arrow"></i>

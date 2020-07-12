@@ -1,65 +1,63 @@
 <div class="page-cover">
   <div class="cut-in">
-    <%= image_tag "allow/people_company.jpg" %>
+    <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   </div>
   <div class="header-text">
     <div class="header-background">
-      O nas
+      <%= @page.title %>
     </div>
     <div id="scroll-arrow" class="arrow-hover">
       <i class="arrow"></i>
     </div>
   </div>
 </div>
+<% paragraph = @paragraphs.first %>
 <section id="scroll-target" class="no-padding">
   <div class="container">
     <div class="row space-evenly">
       <div class="fifty">
-        <%= image_tag 'card-logo.png', class: 'side-image' %>
+        <% if paragraph.image.attached? %>
+          <%= image_tag rails_blob_path(paragraph.image), class: 'side-image' %>
+        <% end %>
       </div>
       <div class="fifty about-title align-right">
-        <h2 class="about-title">Kim jesteśmy?</h2>
+        <h2 class="about-title"><%= paragraph.title %></h2>
         <hr class="float-right"><br>
-        <p>Green Evolution to firma zajmująca się sprzedażą i instalacją systemów energetycznych i klimatyzacji.</p>
-        <p>Wieloletnie doświadczenie jakie zdobyliśmy dało nam możliwość specjalizacji w urządzeniach wykorzystujących
-          odnawialne źródła energii.</p>
-        <p>
-          Proponujemy ekologiczne pompy ciepła, klimatyzacje, urządzenia chłodnicze oraz
-          instalacje fotowoltaiczne.
-        </p>
+        <p><%= paragraph.content %></p>
       </div>
     </div>
   </div>
 </section>
+<% paragraph = @paragraphs.second %>
 <section class="no-padding">
   <div class="container">
     <div class="row space-evenly">
       <div class="fifty about-title align-left">
-        <h2>Co oferujemy?</h2>
+        <h2><%= paragraph.title %></h2>
         <hr class="float-left"><br>
-        <p>Naszym Klientom gwarantujemy kompleksową obsługę każdej inwestycji w zakresie doboru odpowiednich rozwiązań
-          przynoszących znaczne oszczędności z użytkowania energii odnawialnej.</p>
-        <p>
-          W ramach naszych usług dokonujemy uruchomienia zamontowanego systemu wraz ze szczegółowym instruktarzem
-          użytkownika dotyczący bezpiecznego i prawidłowego korzystania.</p>
+        <p><%= paragraph.content %></p>
       </div>
       <div class="fifty">
-        <%= image_tag 'allow/industry.jpg', class: 'side-image' %>
+        <% if paragraph.image.attached? %>
+          <%= image_tag rails_blob_path(paragraph.image), class: 'side-image' %>
+        <% end %>
       </div>
     </div>
   </div>
 </section>
+<% paragraph = @paragraphs.third %>
 <section class="no-padding">
   <div class="container">
     <div class="row space-evenly">
       <div class="fifty">
-        <%= image_tag 'allow/teamwork.jpg', class: 'side-image' %>
+        <% if paragraph.image.attached? %>
+          <%= image_tag rails_blob_path(paragraph.image), class: 'side-image' %>
+        <% end %>
       </div>
       <div class="fifty about-title align-right">
-        <h2 class="about-title">Co gwarantujemy?</h2>
+        <h2 class="about-title"><%= paragraph.title %></h2>
         <hr class="float-right"><br>
-        <p>Współdziałamy tylko ze znanymi i cenionymi producentami oferowanych urządzeń.
-          Naszym klientom zapewniamy również serwis gwarancyjny i pogwarancyjny.</p>
+        <p><%= paragraph.content %></p>
       </div>
     </div>
   </div>

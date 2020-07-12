@@ -1,17 +1,16 @@
 <div class="page-cover">
   <div class="cut-in">
-    <%= image_tag "allow/technic_work.jpg" %>
+    <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   </div>
   <div class="header-text">
     <div class="header-background">
-      Portfolio
+      <%= @page.title %>
     </div>
     <div id="scroll-arrow" class="arrow-hover">
       <i class="arrow"></i>
     </div>
   </div>
 </div>
-
 <section class="no-padding">
   <div class="main-header">
     <div id="scroll-target" class="header-hover">
@@ -32,96 +31,4 @@
       </div>
     <% end %>
   </div>
-  <!--<div id="gallery" class="container">
-    <div class="row">
-      <div class="col">
-        <%#= link_to image_path("realizations/IMG_20200221_164628.jpg"), { class: "lightbox" }  do %>
-          <%#= image_tag "realizations/IMG_20200221_164628.jpg" %>
-        <%# end %>
-      </div>
-      <div class="col">
-        <%#= link_to image_path("realizations/IMG_20200221_164629.jpg"), { class: "lightbox" }  do %>
-          <%#= image_tag "realizations/IMG_20200221_164629.jpg" %>
-        <%# end %>
-      </div>
-      <div class="col">
-        <%#= link_to image_path("realizations/IMG_20200404_161050.jpg"), { class: "lightbox" }  do %>
-          <%#= image_tag "realizations/IMG_20200404_161050.jpg" %>
-        <%# end %>
-      </div>
-      <div class="col">
-        <%#= link_to image_path("realizations/IMG_20200422_190130.jpg"), { class: "lightbox" }  do %>
-          <%#= image_tag "realizations/IMG_20200422_190130.jpg" %>
-        <%# end %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <%#= link_to image_path("realizations/IMG_20200422_190353.jpg"), { class: "lightbox" }  do %>
-          <%#= image_tag "realizations/IMG_20200422_190353.jpg" %>
-        <%# end %>
-      </div>
-      <div class="col">
-        <%#= link_to image_path("realizations/IMG_20200423_124622.jpg"), { class: "lightbox" }  do %>
-          <%#= image_tag "realizations/IMG_20200423_124622.jpg" %>
-        <%# end %>
-      </div>
-      <div class="col">
-        <%#= link_to image_path("realizations/IMG_20200509_154012.jpg"), { class: "lightbox" }  do %>
-          <%#= image_tag "realizations/IMG_20200509_154012.jpg" %>
-        <%# end %>
-      </div>
-      <div class="col">
-        <%#= link_to image_path("realizations/IMG_20200522_141218.jpg"), { class: "lightbox" }  do %>
-          <%#= image_tag "realizations/IMG_20200522_141218.jpg" %>
-        <%# end %>
-      </div>
-    </div>
-  </div>-->
 </section>
-<br><br><br><br><br><br><br>
-
-<div id="gallery-modal" class="modal">
-  <span id="close-modal" class="close cursor">&times;</span>
-  <div class="modal-content">
-
-    <div class="gallerySlides">
-      <%= image_tag "realizations/IMG_20200522_141218.jpg" %>
-    </div>
-
-    <div class="gallerySlides">
-      <%= image_tag "realizations/IMG_20200509_154012.jpg" %>
-    </div>
-
-    <div class="gallerySlides">
-      <%= image_tag "realizations/IMG_20200423_124622.jpg" %>
-    </div>
-
-    <div class="gallerySlides">
-      <%= image_tag "realizations/IMG_20200422_190353.jpg" %>
-    </div>
-
-    <div class="gallerySlides">
-      <%= image_tag "realizations/IMG_20200422_190130.jpg" %>
-    </div>
-
-    <div class="gallerySlides">
-      <%= image_tag "realizations/IMG_20200404_161050.jpg" %>
-    </div>
-
-    <div class="gallerySlides">
-      <%= image_tag "realizations/IMG_20200221_164629.jpg" %>
-    </div>
-
-    <div class="gallerySlides">
-      <%= image_tag "realizations/IMG_20200221_164628.jpg" %>
-    </div>
-
-    <a id="previous-slide" class="prev">&#10094;</a>
-    <a id="next-slide" class="next">&#10095;</a>
-
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
-  </div>
-</div>
