@@ -18,6 +18,7 @@ require("@rails/activestorage").start();
 require("../../javascript/pages/main_page");
 require("../../javascript/pages/turbolinks-fade");
 const Tobii = require("../../../node_modules/tobii/dist/js/tobii");
+require("../../javascript/pages/contact_validation");
 
 require("trix");
 require("@rails/actiontext");
