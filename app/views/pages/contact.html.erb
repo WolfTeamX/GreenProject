@@ -13,72 +13,68 @@
 </div>
 
 
-<section class="no-padding">
+<section class="no-padding contact">
+  <%#= image_tag 'plains.jpg' %>
 
-  <div class="main-header">
-    <div id="scroll-target" class="header-hover">
-      <h2>Wypełnij formularz kontaktowy:</h2>
-      <hr class="thematic-break">
-    </div>
-  </div>
-
-  <div class="contact-form">
-
-
-    <div class="row">
-
-      <div class="main-form">
-        <div class="text">
-          <h3>Napisz do nas</h3>
-
-          <br>
-<!--          <h4>Odpowiemy tak szybko jak to możliwe</h4>-->
-        </div>
-        <div class="input">
-          <%= form_tag do %>
-            <%= label_tag :content, 'Treść' %> <br>
-            <%= text_area_tag :content, '', autocomplete: "off", placeholder: "Tutaj wpisz treść wiadomości..." %>
-
-            <div class="row">
-              <div>
-                <%= label_tag :name, 'Twoje imię' %>
-                <%= text_field_tag :name %>
-              </div>
-
-              <div>
-                <%= label_tag :email, 'Twój email' %>
-                <%= email_field_tag :email %>
-              </div>
+  <div class="row">
+    <div class="fifty shadow">
+      <div class="content">
+        <h1>Napisz do nas</h1>
+        <hr>
+        <%= form_with url: edit_sub_page_path, id: "contact-form" do |f| %>
+          <div class="row">
+            <div class="fifty no-margin left">
+              <%= f.label :name, "Imię:" %><br>
+              <%= f.text_field :name, placeholder: "Twoje imię (opcjonalnie)" %>
             </div>
-            <%= submit_tag 'Wyślij wiadomość' %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="side-form">
-        <div class="text">
-          <p>Nie chcesz pisać?</p>
-          <p>Są też inne formy kontaktu!</p>
-          <br><br><br>
-          <h3>Informacje</h3>
-          <div class="row">
-            <div><p>Adres: </p></div>
-            <div><p>701  Bird Spring Lane Houston</p></div>
+            <div class="fifty no-margin right">
+              <%= f.label :phone, "Telefon:" %><br>
+              <%= f.text_field :phone, placeholder: "Twój numer (opcjonalnie)" %>
+            </div>
           </div>
           <div class="row">
-            <div>Telefon: </div>
-            <div>281-556-7749</div>
+            <div class="fifty no-margin email">
+              <%= f.label :email, "Email:" %><br>
+              <%= f.text_field :email, placeholder: "Twój adres email" %>
+            </div>
           </div>
-          <p>Telefon: 281-556-7749</p>
-          <p>Email: sample@email.com</p>
-        </div>
+          <div class="row">
+            <div class="hundred no-margin">
+              <%= f.label :content, "Treść:" %><br>
+              <%= f.text_area :content, placeholder: "Treść wiadomości" %>
+              <%= f.submit "Wyślij wiadomość", class: "ghost-button" %>
+            </div>
+          </div>
+        <% end %>
       </div>
-
     </div>
-
-
+    <div class="fifty contact-padding shadow">
+      <%= image_tag 'plains.jpg', class: "contact-img contact-height"  %>
+      <div class="side-content">
+        <div class="row">
+          <%= image_tag 'svg/map-pin.svg' %><h3>Nasz adres</h3>
+        </div>
+        <div class="row sub-text">
+          <p>Mada Center 5th floor, 226 Hudson St, New York, NY 10018 US</p>
+        </div>
+        <div class="row">
+          <%= image_tag 'svg/phone.svg' %><h3>Telefon&ensp;&ensp;&ensp;</h3>
+        </div>
+        <div class="row sub-text">
+          <p>+48 123 456 789</p>
+        </div>
+        <div class="row">
+          <%= image_tag 'svg/mail.svg' %><h3>E-Mail&ensp;&ensp;&ensp;&ensp;&ensp;</h3>
+        </div>
+        <div class="row sub-text">
+          <p>GreenEvolution@gmail.com</p>
+        </div>
+        <div class="row last">
+          <%= image_tag 'svg/hand-plant2.svg' %><h2>Czekamy na ciebie!</h2>
+        </div>
+      </div>
+    </div>
   </div>
-
 </section>
 
 
