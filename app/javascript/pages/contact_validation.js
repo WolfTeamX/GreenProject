@@ -4,10 +4,7 @@ document.addEventListener("turbolinks:load", function () {
     var form = document.forms["contact-form"];
 
     if (form) {
-
         var elements = form.elements;
-        console.log(elements);
-
 
         Array.from(elements).forEach(function (elem) {
             elem.addEventListener("focus", function () {
@@ -19,16 +16,12 @@ document.addEventListener("turbolinks:load", function () {
             });
         });
 
-        console.log("Got form! Adding validation...");
         form.addEventListener("submit", function (event) {
-            console.log("validated! :o");
             if (validateForm(form)) {
-                console.log("form is valid!")
+                // TODO Continue submit...
             } else {
-                console.log("form is invalid! :<")
+                event.preventDefault();
             }
-
-            event.preventDefault();
         })
     }
 });
@@ -51,7 +44,6 @@ function showErrors(form, emailEmpty, emailWrong, content, phone) {
         form["email"].classList.add("invalid-input");
         form["email"].parentNode.setAttribute('data-before', 'To pole nie może być puste.');
         form["email"].parentNode.classList.add("show");
-        console.log(form["email"].parentNode.classList);
     }
 
     if(emailWrong && !emailEmpty) {

@@ -28,6 +28,5 @@ document.addEventListener("turbolinks:load", function () {
 
     if(gallery) {
         const tobii = new Tobii();
-        console.log("Loading?");
     }
 });
