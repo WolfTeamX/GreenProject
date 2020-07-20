@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+faqs = FaqPage.create([{title: "Fotowoltaika"},
+                       {title: "Pompa ciepła"},
+                       {title: "Klimatyzacja"}])
+
 SubPage.create([{title: "O nas"}, {title: "Nasza oferta"}, {title: "Portfolio"}, {title: "Kontakt"}])
 
 OfferParagraph.create([{header: "Energia z gwiazd", title: "Fotowoltaika",

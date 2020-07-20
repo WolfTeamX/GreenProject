@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_162936) do
-
-  create_table "about_us_pages", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2020_07_17_183746) do
 
   create_table "about_us_paragraphs", force: :cascade do |t|
     t.string "title"
@@ -60,6 +55,20 @@ ActiveRecord::Schema.define(version: 2020_07_06_162936) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "faq_pages", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "faq_questions", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "faq_page_id", null: false
+    t.index ["faq_page_id"], name: "index_faq_questions_on_faq_page_id"
+  end
+
   create_table "icons", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -70,6 +79,13 @@ ActiveRecord::Schema.define(version: 2020_07_06_162936) do
   create_table "main_offers", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "offer_paragraphs", force: :cascade do |t|
+    t.string "header"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -99,6 +115,7 @@ ActiveRecord::Schema.define(version: 2020_07_06_162936) do
   end
 
   create_table "sub_pages", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -115,5 +132,13 @@ ActiveRecord::Schema.define(version: 2020_07_06_162936) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "voivodeships", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "faq_questions", "faq_pages"
 end
