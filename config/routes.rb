@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/kontakt/' => 'pages#contact', as: :contact
   post '/kontakt/' => 'pages#contact', as: :contact_post
 
-
+  get 'oferta/faq/:id' => 'pages#faq', as: :faq
   get '/oferta/o_fotowoltaice/' => 'pages#about_photovoltaics', as: :about_photovoltaics
   get '/oferta/o_pompie_ciepla/' => 'pages#about_heat_pump', as: :about_heat_pump
   get '/oferta/o_klimatyzacji/' => 'pages#about_air_conditioning', as: :about_air_conditioning
@@ -58,6 +58,21 @@ Rails.application.routes.draw do
   get '/admin/oferta' => 'admin#offer', as: :offer_admin
   get '/admin/oferta/edytuj' => 'offer_paragraphs#edit', as: :edit_offer_paragraph
   post '/admin/oferta/edytuj' => 'offer_paragraphs#update', as: :update_offer_paragraph
+
+  # FAQ
+  get '/admin/faq/:id' => 'admin#faq', as: :faq_admin
+  get '/admin/o-fotowoltaice' => 'admin#about_photovoltaics', as: :about_photovoltaics_admin
+  get '/admin/o-pompie-ciepla' => 'admin#about_heat_pump', as: :about_heat_pump_admin
+  get '/admin/o-klimatyzacji' => 'admin#about_air_conditioning', as: :about_air_conditioning_admin
+  get '/admin/edytuj-faq' => 'faq_pages#edit', as: :edit_faq_page
+  post '/admin/faq' => 'faq_pages#update', as: :update_faq_page
+
+  get '/admin/dodaj-faq' => 'faq_questions#add', as: :add_faq_question
+  post '/admin/dodaj-faq' => 'faq_questions#create', as: :create_faq_question
+  get '/admin/edytuj-pytanie-faq' => 'faq_questions#edit', as: :edit_faq_question
+  post '/admin/edytuj-pytanie-faq' => 'faq_questions#edit', as: :update_faq_question
+  post '/admin/usun-faq' => 'faq_questions#destroy', as: :destroy_faq_question
+
 
   # Contact
   get '/admin/contact' => 'admin#contact', as: :contact_admin
