@@ -43,16 +43,20 @@ class PagesController < ApplicationController
     end
   end
 
+  def faq
+    @page = FaqPage.find(params[:id])
+  end
+
   def about_photovoltaics
-    # Do sth here...
+    @page = FaqPage.find(1)
   end
 
   def about_heat_pump
-    # Do sth here...
+    @page = FaqPage.find(2)
   end
 
   def about_air_conditioning
-    # Do sth here...
+    @page = FaqPage.find(3)
   end
 
 end

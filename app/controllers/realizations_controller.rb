@@ -7,7 +7,7 @@ class RealizationsController < ApplicationController
   end
 
   def create
-    params[:images].each do |image|
+    params[:image].each do |image|
       realization = Realization.new
       realization.image.attach(image)
       realization.save

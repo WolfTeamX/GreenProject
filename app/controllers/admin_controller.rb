@@ -45,4 +45,20 @@ class AdminController < ApplicationController
     @page = SubPage.find(4)
 
   end
+
+  def faq
+    @page = FaqPage.find(params[:id])
+  end
+
+  def about_photovoltaics
+    @page = FaqPage.find(1)
+  end
+
+  def about_heat_pump
+    @page = FaqPage.find(2)
+  end
+
+  def about_air_conditioning
+    @page = FaqPage.find(3)
+  end
 end
