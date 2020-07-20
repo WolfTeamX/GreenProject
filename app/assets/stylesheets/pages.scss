@@ -924,6 +924,7 @@ footer {
 
   .contact-img {
     position: relative;
+    min-width: 440px;
     width: 100%;
     object-fit: cover;
     filter: brightness(.4);
@@ -1331,6 +1332,7 @@ footer {
     position: relative;
     padding: 0;
     margin: 0 15% 0 0;
+    min-width: 440px;
     width: 30%;
   }
 
