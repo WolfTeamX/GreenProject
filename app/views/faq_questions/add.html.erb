@@ -1,0 +1,12 @@
+<div class="admin-edit">
+  <h1>Dodaj nowe pytanie</h1>
+  <hr><br>
+  <%= form_with url: create_faq_question_path do |f| %>
+    <p>Pytanie:</p><br>
+    <%= f.text_field :title %><br><br>
+    <p>Odpowiedź:</p><br>
+    <%= f.rich_text_area :answer %><br>
+    <%= f.hidden_field :page, value: @page.id %>
+    <%= f.submit "Zapisz pytanie", class: "button button-success" %>
+  <% end %>
+</div>

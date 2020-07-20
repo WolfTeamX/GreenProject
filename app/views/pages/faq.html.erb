@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
+  <div class="header-text">
+    <%= @page.title %>
+  </div>
+</div>
+<section class="no-padding">
+  <div class="about-container">
+    <% @page.faq_questions.each do |question| %>
+      <h3><%= question.title %></h3>
+      <hr class="no-width-transition">
+      <p>
+        <%= question.answer %>
+      </p>
+      <br>
+    <% end %>
+  </div>
+</section>

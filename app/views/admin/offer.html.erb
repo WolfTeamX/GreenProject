@@ -33,7 +33,7 @@
         <h2><%= offer.title %></h2>
         <hr class="float-left">
         <p><%= offer.content %></p>
-        <%= link_to "O fotowoltaice...", about_photovoltaics_path, class: "ghost-button" %>
+        <%= link_to "O fotowoltaice...", faq_admin_path(id: 1), class: "ghost-button" %>
         <%= link_to "Edytuj ofertę", edit_offer_paragraph_path(offer.id), class: "ghost-button" %>
       </div>
     </div>
@@ -54,7 +54,7 @@
         <h2><%= offer.title %></h2>
         <hr class="float-right">
         <p><%= offer.content %></p>
-        <%= link_to "O pompach ciepła...", about_heat_pump_path, class: "ghost-button" %>
+        <%= link_to "O pompach ciepła...", faq_admin_path(id: 2), class: "ghost-button" %>
         <%= link_to "Edytuj ofertę", edit_offer_paragraph_path(offer.id), class: "ghost-button" %>
       </div>
     </div>
@@ -69,7 +69,7 @@
         <h2><%= offer.title %></h2>
         <hr class="float-left">
         <p><%= offer.content %></p>
-        <%= link_to "O klimatyzacji...", about_air_conditioning_path, class: "ghost-button" %>
+        <%= link_to "O klimatyzacji...", faq_admin_path(id: 3), class: "ghost-button" %>
         <%= link_to "Edytuj ofertę", edit_offer_paragraph_path(offer.id), class: "ghost-button" %>
       </div>
     </div>

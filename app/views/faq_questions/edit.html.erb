@@ -1,0 +1,14 @@
+<div class="admin-edit">
+  <h1>Edytuj pytanie</h1>
+  <hr><br>
+  <h2><%= @question.title %></h2><br>
+  <p><%= @question.answer %></p>
+  <br>
+  <%= form_with url: update_faq_question_path, model: @question do |f| %>
+    <p>Pytanie:</p><br>
+    <%= f.text_field :title %><br><br>
+    <p>Odpowiedź:</p><br>
+    <%= f.rich_text_area :answer %><br><br>
+    <%= f.submit "Zapisz pytanie", class: "button button-success" %>
+  <% end %>
+</div>

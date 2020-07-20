@@ -1,0 +1,19 @@
+<div class="admin-edit">
+  <h1>Edytuj stronę</h1>
+  <hr>
+  <br>
+  <h4><%= @page.title %></h4>
+  <% if @page.image.attached? %>
+    <%= image_tag rails_blob_path(@page.image), class: "slide-image" %>
+  <% end %>
+  <br>
+  <hr>
+  <br>
+  <%= form_with url: update_faq_page_path do |f| %>
+    <p>Tytuł:</p><br>
+    <%= f.text_field :title, value: @page.title %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.hidden_field :id, value: @page.id %>
+    <%= f.submit "Zapisz stronę", class: "button button-success" %>
+  <% end %>
+</div>

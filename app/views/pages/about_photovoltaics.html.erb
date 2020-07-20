@@ -1,13 +1,21 @@
 <div class="page-header">
-  <%= image_tag "wunder-panels.jpg" %>
+  <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   <div class="header-text">
-    Fotowoltaika
+    <%= @page.title %>
   </div>
 </div>
 
 <section class="no-padding">
   <div class="about-container">
-    <h1>O instalacjach fotowoltaicznych</h1>
+    <% @page.faq_questions.each do |question| %>
+      <h3><%= question.title %></h3>
+      <hr class="no-width-transition">
+      <p>
+        <%= question.answer %>
+      </p>
+      <br>
+    <% end %>
+    <!--<h1>O instalacjach fotowoltaicznych</h1>
     <hr>
     <br>
     <p>
@@ -57,11 +65,11 @@
       przekazywana do sieci publicznej. Następnie ilość energii oddawanej do sieci jest zliczana przez specjalny licznik
       montowany przez Zakład Energetyczny.
     </p>
-    <br>
+    <br>-->
 
-    <h3>Schemat przykładowej instalacji fotowoltaicznej:</h3>
-    <hr class="no-width-transition">
+    <!--<h3>Schemat przykładowej instalacji fotowoltaicznej:</h3>
+    <hr class="no-width-transition">-->
   </div>
 
-  <%= image_tag "energy_scheme.jpg", class: "center-image" %>
+  <%#= image_tag "energy_scheme.jpg", class: "center-image" %>
 </section>
