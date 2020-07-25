@@ -1578,6 +1578,19 @@ footer {
       }
     }
   }
+
+  .contact {
+    form {
+      .left {
+        width: 250px;
+        padding: 0;
+      }
+      .right {
+        width: 250px;
+        padding: 0;
+      }
+    }
+  }
 }
 
 .next {
