@@ -76,64 +76,26 @@
 <section class="no-padding">
   <div class="main-header">
     <div class="header-hover">
-      <h1 class="title">Tu działamy:</h1>
+      <h1 class="title">Tu działamy</h1>
       <hr class="thematic-break">
     </div>
   </div>
-  <%= image_tag 'poland_map.png', class: 'map center-image' %>
-</section>
-
-
-<!--
-<h1>
-  O nas
-</h1>
-<hr>
-<%# paragraph = @paragraphs.first %>
-<section class="no-padding">
-  <div class="row space-evenly">
-    <div class="fifty">
-      <%# if paragraph.image.attached? %>
-<%#= image_tag rails_blob_path(paragraph.image), class: "side-image" %>
-<%# end %>
-    </div>
-    <div class="fifty about-title align-right">
-      <h2 class="about-title"><%#= paragraph.title %></h2>
-      <hr class="float-right"><br>
-      <p><%#= paragraph.content %></p>
-    </div>
+  <div class="middle-button">
+    <%= link_to "Dodaj nowe województwo", add_voivodeship_path, class: "button button-success" %><br><br><br>
+  </div>
+  <div class="voivodeships">
+    <% @voivodeships.in_groups_of(3, false).each do |group| %>
+      <div class="row">
+        <% group.each do |voivodeship| %>
+          <div class="thirty">
+            <div class="container">
+              <%= image_tag rails_blob_path(voivodeship.image) %>
+              <h2><%= voivodeship.name %></h2>
+            </div><br>
+            <%= link_to "Edytuj województwo", edit_voivodeship_path(voivodeship), class: "button button-success" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </section>
-
-<%# paragraph = @paragraphs.second %>
-<section class="no-padding">
-  <div class="row space-evenly">
-    <div class="fifty about-title align-left">
-      <h2 class="about-title"><%#= paragraph.title %></h2>
-      <hr class="float-left"><br>
-      <p><%#= paragraph.content %></p>
-    </div>
-    <div class="fifty">
-      <%# if paragraph.image.attached? %>
-<%#= image_tag rails_blob_path(paragraph.image), class: "side-image" %>
-<%# end %>
-    </div>
-  </div>
-</section>
-
-<%# paragraph = @paragraphs.third %>
-<section class="no-padding">
-  <div class="row space-evenly">
-    <div class="fifty">
-      <%# if paragraph.image.attached? %>
-<%#= image_tag rails_blob_path(paragraph.image), class: "side-image" %>
-<%# end %>
-    </div>
-    <div class="fifty about-title align-right">
-      <h2 class="about-title"><%#= paragraph.title %></h2>
-      <hr class="float-right"><br>
-      <p><%#= paragraph.content %></p>
-    </div>
-  </div>
-</section>
--->

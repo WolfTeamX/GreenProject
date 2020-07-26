@@ -1,0 +1,11 @@
+<div class="admin-edit">
+  <h1>Dodaj województwo</h1>
+  <hr>
+  <br>
+  <%= form_with url: create_voivodeship_path do |f| %>
+    <p>Nazwa:</p><br>
+    <%= f.text_field :name %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.submit "Zapisz województwo", class: "button button-success" %>
+  <% end %>
+</div>

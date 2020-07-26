@@ -1,0 +1,18 @@
+<div class="admin-edit">
+  <h1>Edytuj województwo</h1>
+  <hr>
+  <br>
+  <%= form_with url: update_voivodeship_path, model: @voivodeship do |f| %>
+    <p>Nazwa:</p><br>
+    <%= f.text_field :name %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.hidden_field :id%>
+    <%= f.submit "Zapisz województwo", class: "button button-success" %>
+  <% end %>
+
+  <br>
+  <hr>
+  <br>
+  <%= button_to "Usuń województwo", destroy_voivodeship_path(id: @voivodeship.id), class: "button button-error" %>
+  <br>
+</div>

@@ -69,28 +69,18 @@
       <hr class="thematic-break">
     </div>
   </div>
-
   <div class="voivodeships">
-    <div class="row">
-      <div class="thirty">
-        <div class="container">
-          <%= image_tag 'allow/szczecin.jpg' %>
-          <h2>Zachodniopomorskie</h2>
-        </div>
+    <% @voivodeships.in_groups_of(3, false).each do |group| %>
+      <div class="row">
+        <% group.each do |voivodeship| %>
+          <div class="thirty">
+            <div class="container">
+              <%= image_tag rails_blob_path(voivodeship.image) %>
+              <h2><%= voivodeship.name %></h2>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <div class="thirty">
-        <div class="container">
-          <%= image_tag 'allow/pomorskie.jpg' %>
-          <h2>Pomorskie</h2>
-        </div>
-      </div>
-      <div class="thirty">
-        <div class="container">
-          <%= image_tag 'allow/poznan.jpg' %>
-          <h2>Wielkopolska</h2>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
-
 </section>
