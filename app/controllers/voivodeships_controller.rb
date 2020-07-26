@@ -20,9 +20,9 @@ class VoivodeshipsController < ApplicationController
   end
 
   def update
-    voivodeship = Voivodeship.find(params[:id])
-    voivodeship.name = params[:name]
-    voivodeship.image.attach(params[:image]) unless params[:image].nil?
+    voivodeship = Voivodeship.find(params[:voivodeship][:id])
+    voivodeship.name = params[:voivodeship][:name]
+    voivodeship.image.attach(params[:voivodeship][:image]) unless params[:voivodeship][:image].nil?
     voivodeship.save
     redirect_to about_us_admin_path
   end

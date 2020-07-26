@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   def about_us
     @page = SubPage.find(1)
     @paragraphs = AboutUsParagraph.all
+    @voivodeships = Voivodeship.all
   end
 
   def offer

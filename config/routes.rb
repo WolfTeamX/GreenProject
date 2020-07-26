@@ -58,7 +58,7 @@ Rails.application.routes.draw do
   get '/admin/dodaj-wojewodztwo' => 'voivodeships#add', as: :add_voivodeship
   get '/admin/edytuj-wojewodztwo' => 'voivodeships#edit', as: :edit_voivodeship
   post '/admin/dodaj-wojewodztwo' => 'voivodeships#create', as: :create_voivodeship
-  post '/admin/edytuj-wojewodztwo' => 'voivodeships#update', as: :update_voivodeship
+  patch '/admin/edytuj-wojewodztwo' => 'voivodeships#update', as: :update_voivodeship
   post '/admin/usun-wojewodztwo' => 'voivodeships#destroy_voivodeship', as: :destroy_voivodeship
 
   # Offers

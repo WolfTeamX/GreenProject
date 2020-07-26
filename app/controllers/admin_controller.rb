@@ -29,6 +29,7 @@ class AdminController < ApplicationController
   def about_us
     @paragraphs = AboutUsParagraph.all
     @page = SubPage.find(1)
+    @voivodeships = Voivodeship.all
   end
 
   def offer
