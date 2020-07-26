@@ -54,6 +54,13 @@ Rails.application.routes.draw do
   get '/admin/o-nas/edytuj' => 'about_us_paragraphs#edit', as: :edit_about_us_paragraph
   post '/admin/o-nas/edytuj' => 'about_us_paragraphs#update', as: :update_about_us_paragraph
 
+  # Voivodeships
+  get '/admin/dodaj-wojewodztwo' => 'voivodeships#add', as: :add_voivodeship
+  get '/admin/edytuj-wojewodztwo' => 'voivodeships#edit', as: :edit_voivodeship
+  post '/admin/dodaj-wojewodztwo' => 'voivodeships#create', as: :create_voivodeship
+  post '/admin/edytuj-wojewodztwo' => 'voivodeships#update', as: :update_voivodeship
+  post '/admin/usun-wojewodztwo' => 'voivodeships#destroy_voivodeship', as: :destroy_voivodeship
+
   # Offers
   get '/admin/oferta' => 'admin#offer', as: :offer_admin
   get '/admin/oferta/edytuj' => 'offer_paragraphs#edit', as: :edit_offer_paragraph
