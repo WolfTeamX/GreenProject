@@ -14,6 +14,8 @@ user.save!
 
 ContactInfo.create(address: "693  Wayback Lane Hicksville NY", phone: "+48 123 456 789", email: "hsnznhupca@temporary-mail.net")
 
+Voivodeship.create([{name: "Wielkopolska"}, {name: "Zachodniopomorskie"}, {name: "Pomorskie"}])
+
 faqs = FaqPage.create([{title: "Fotowoltaika"},
                        {title: "Pompa ciepła"},
                        {title: "Klimatyzacja"}])
