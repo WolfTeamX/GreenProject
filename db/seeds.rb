@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+user = User.new
+user.email = 'admin@admin.admin'
+user.password = 'zaq1@WSX'
+user.password_confirmation = 'zaq1@WSX'
+user.save!
+
+ContactInfo.create(address: "693  Wayback Lane Hicksville NY", phone: "+48 123 456 789", email: "hsnznhupca@temporary-mail.net")
+
 faqs = FaqPage.create([{title: "Fotowoltaika"},
                        {title: "Pompa ciepła"},
                        {title: "Klimatyzacja"}])
@@ -21,12 +29,6 @@ OfferParagraph.create([{header: "Energia z gwiazd", title: "Fotowoltaika",
                        {header: "Wysoka jakość", title: "Klimatyzacja",
                         content: "Stabilizuje temperatuje i wilgotność w otoczeniu,
                                   zapewniając komfort i zrównoważony bilans cieplny."}])
-
-user = User.new
-user.email = 'admin@admin.admin'
-user.password = 'zaq1@WSX'
-user.password_confirmation = 'zaq1@WSX'
-user.save!
 
 MainOffer.create([{ title: "Fotowoltaika",
                     description: "Praesent ullamcorper ligula id neque sollicitudin, a vulputate est aliquam.

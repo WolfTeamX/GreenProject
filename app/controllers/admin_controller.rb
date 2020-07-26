@@ -43,7 +43,7 @@ class AdminController < ApplicationController
 
   def contact
     @page = SubPage.find(4)
-
+    @contact = ContactInfo.first
   end
 
   def faq

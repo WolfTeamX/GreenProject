@@ -73,6 +73,10 @@ Rails.application.routes.draw do
   post '/admin/edytuj-pytanie-faq' => 'faq_questions#edit', as: :update_faq_question
   post '/admin/usun-faq' => 'faq_questions#destroy', as: :destroy_faq_question
 
+  # Contact
+  get '/admin/kontakt/edytuj' => 'contact_info#edit', as: :edit_contact_info
+  post '/admin/kontakt/edytuj' => 'contact_info#update', as: :update_contact_info
+
 
   # Contact
   get '/admin/contact' => 'admin#contact', as: :contact_admin

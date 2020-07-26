@@ -1,0 +1,17 @@
+<div class="admin-edit">
+  <h1>Edytuj informacje kontaktowe</h1>
+  <hr><br>
+  <h2>Adres: &ensp;<%= @contact.address %></h2><br>
+  <h2>Telefon: &ensp;<%= @contact.phone %></h2><br>
+  <h2>Email: &ensp;<%= @contact.email %></h2><br>
+  <br><hr><br>
+  <%= form_with url: update_contact_info_path do |f| %>
+    <p>Adres:</p><br>
+    <%= f.text_field :address, value: @contact.address %><br><br>
+    <p>Telefon:</p><br>
+    <%= f.text_field :phone, value: @contact.phone %><br><br>
+    <p>Email:</p><br>
+    <%= f.text_field :email, value: @contact.email %><br><br>
+    <%= f.submit "Zapisz informacje kontaktowe", class: "button button-success" %>
+  <% end %>
+</div>

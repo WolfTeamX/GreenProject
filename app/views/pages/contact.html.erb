@@ -1,6 +1,6 @@
 <div class="page-cover">
   <div class="cut-in">
-    <%= image_tag "allow/contact.jpg" %>
+    <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   </div>
   <div class="header-text">
     <div class="header-background">
