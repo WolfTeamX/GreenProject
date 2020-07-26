@@ -75,7 +75,7 @@
         <% group.each do |voivodeship| %>
           <div class="thirty">
             <div class="container">
-              <%= image_tag rails_blob_path(voivodeship.image) %>
+              <%= image_tag rails_blob_path(voivodeship.image) if voivodeship.image.attached? %>
               <h2><%= voivodeship.name %></h2>
             </div>
           </div>
