@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   ### Admin
   get '/admin/' => 'admin#admin_index', as: :admin_index
 
+  # Footer
+  get '/admin/stopka' => 'footers#edit', as: :edit_footer
+  patch '/admin/stopka' => 'footers#update', as: :update_footer
+
   # Main website
   get '/admin/main-offer' => 'main_offers#edit', as: :edit_offer
   post '/admin/main-offer' => 'main_offers#update', as: :update_offer
@@ -36,7 +40,7 @@ Rails.application.routes.draw do
   get '/admin/zarzadzaj-slajdami' => 'slides#manage', as: :manage_slides
   get '/admin/edytuj-slajd' => 'slides#edit', as: :edit_slide
   post '/admin/stworz-slajd' => 'slides#create', as: :create_slide
-  post '/admin/zaktualizuj-slajd' => 'slides#update', as: :update_slide
+  patch '/admin/zaktualizuj-slajd' => 'slides#update', as: :update_slide
   delete '/admin/' => 'slides#destroy', as: :remove_slide
 
   # Realizations

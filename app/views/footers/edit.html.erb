@@ -1,0 +1,11 @@
+<div class="admin-edit">
+  <h1>Edytuj stopkę</h1>
+  <hr><br>
+  <p><%= @footer.description %></p><br>
+  <br>
+  <%= form_with url: update_footer_path, model: @footer do |f| %>
+    <p>Opis:</p><br>
+    <%= f.text_field :description %><br><br>
+    <%= f.submit "Zapisz pytanie", class: "button button-success" %>
+  <% end %>
+</div>
