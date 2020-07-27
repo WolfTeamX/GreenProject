@@ -47,8 +47,8 @@
       <div class="footer-content">
         <%= image_tag("green_evolution_light.png", :alt => "Green Motion", :class => "logo") %>
         <p>
-          <%= (Setting.exists? id: 1) ? (Setting.find(1)).short_description : nil %>
-
+          <% footer = Footer.find(1) %>
+          <%= footer.description %>
         </p>
       </div>
       <div class="footer-content">
@@ -56,7 +56,10 @@
           Kontakt:
         </h2>
         <p>
-          <%= (Setting.exists? id: 1) ? (Setting.find(1)).address : nil %>
+          <% contact = ContactInfo.find(1) %>
+          Telefon: <%= contact.phone %><br><br>
+          Email: <%= contact.email %><br><br>
+          Adres: <%= contact.address %>
         </p>
       </div>
     </div>

@@ -51,8 +51,11 @@
       <div class="footer-content">
         <%= image_tag("green_evolution_light.png", :alt => "Green Motion", :class => "logo") %>
         <p>
-          <%= (Setting.exists? id: 1) ? (Setting.find(1)).short_description : nil %>
-
+          <% footer = Footer.find(1) %>
+          <%= footer.description if footer %>
+          <% if user_signed_in? %>
+            <br><br><%= link_to "Edytuj opis", edit_footer_path(footer), class: "button button-success" %>
+          <% end %>
         </p>
       </div>
       <div class="footer-content">
@@ -60,7 +63,11 @@
           Kontakt:
         </h2>
         <p>
-          <%= (Setting.exists? id: 1) ? (Setting.find(1)).address : nil %>
+          <% contact = ContactInfo.find(1) %>
+          Telefon: <%= contact.phone if contact %><br><br>
+          Email: <%= contact.email if contact %><br><br>
+          Adres: <%= contact.address if contact %><br><br>
+          <%= link_to "Edytuj kontakt", edit_contact_info_path, class: "button button-success" %>
         </p>
       </div>
     </div>
