@@ -12,6 +12,8 @@ user.password = 'zaq1@WSX'
 user.password_confirmation = 'zaq1@WSX'
 user.save!
 
+Footer.create(description: "")
+
 ContactInfo.create(address: "693  Wayback Lane Hicksville NY", phone: "+48 123 456 789", email: "hsnznhupca@temporary-mail.net")
 
 Voivodeship.create([{name: "Wielkopolska"}, {name: "Zachodniopomorskie"}, {name: "Pomorskie"}])
