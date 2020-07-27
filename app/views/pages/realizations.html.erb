@@ -19,16 +19,21 @@
     </div>
   </div>
   <div id="gallery" class="container">
-    <% @realizations.in_groups_of(4, false).each do |group| %>
-      <div class="row">
-        <% group.each do |realization| %>
-          <div class="col">
-            <%= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
-              <%= image_tag rails_blob_path(realization.image) %>
-            <% end %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+    <div id="realizations">
+      <% @realizations.in_groups_of(4, false).each do |group| %>
+        <div class="row">
+          <% group.each do |realization| %>
+            <div class="col">
+              <%= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
+                <%= image_tag rails_blob_path(realization.image) %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div id="infinite-scrolling">
+      <%= will_paginate @realizations, style: "display: none" %>
+    </div>
   </div>
 </section>

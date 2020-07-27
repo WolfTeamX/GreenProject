@@ -38,8 +38,13 @@ class AdminController < ApplicationController
   end
 
   def realizations
-    @realizations = Realization.paginate(page: params[:page], per_page: 9).order('created_at DESC')
+    @realizations = Realization.paginate(page: params[:page], per_page: 4).order('created_at DESC')
     @page = SubPage.find(3)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def contact

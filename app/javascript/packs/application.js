@@ -17,16 +17,10 @@ require("@rails/activestorage").start();
 
 require("../../javascript/pages/main_page");
 require("../../javascript/pages/turbolinks-fade");
-const Tobii = require("../../../node_modules/tobii/dist/js/tobii");
 require("../../javascript/pages/contact_validation");
+require("../../javascript/pages/realizations");
 
 require("trix");
 require("@rails/actiontext");
 
-document.addEventListener("turbolinks:load", function () {
-    var gallery = document.getElementById("gallery");
-
-    if(gallery) {
-        const tobii = new Tobii();
-    }
-});
+global.$ = jQuery;

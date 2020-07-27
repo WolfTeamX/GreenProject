@@ -27,18 +27,22 @@
     </div>
   </div>
   <div id="gallery" class="container">
-    <%= will_paginate @realizations %>
-    <% @realizations.in_groups_of(4, false).each do |group| %>
-      <div class="row">
-        <% group.each do |realization| %>
-          <div class="col">
-            <%= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
-              <%= image_tag rails_blob_path(realization.image) %>
-            <% end %>
-            <br><br><%= link_to "Usuń realizację", remove_realization_path(realization), class: "button button-success" %><br><br>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+    <div id="realizations">
+      <% @realizations.in_groups_of(4, false).each do |group| %>
+        <div class="row">
+          <% group.each do |realization| %>
+            <div class="col">
+              <%= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
+                <%= image_tag rails_blob_path(realization.image) %>
+              <% end %>
+              <br><br><%= link_to "Usuń realizację", remove_realization_path(realization), class: "button button-success" %><br><br>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div id="infinite-scrolling">
+      <%= will_paginate @realizations, style: "display: none" %>
+    </div>
   </div>
 </section>
