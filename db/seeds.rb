@@ -6,11 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.new
-user.email = 'admin@admin.admin'
-user.password = 'zaq1@WSX'
-user.password_confirmation = 'zaq1@WSX'
-user.save!
+User.create(email: "admin@admin.admin", password: "zaq1@WSX", password_confirmation: "zaq1@WSX")
 
 Footer.create(description: "")
 
@@ -18,7 +14,7 @@ ContactInfo.create(address: "693  Wayback Lane Hicksville NY", phone: "+48 123 4
 
 Voivodeship.create([{name: "Wielkopolska"}, {name: "Zachodniopomorskie"}, {name: "Pomorskie"}])
 
-faqs = FaqPage.create([{title: "Fotowoltaika"},
+FaqPage.create([{title: "Fotowoltaika"},
                        {title: "Pompa ciepła"},
                        {title: "Klimatyzacja"}])
 
@@ -45,9 +41,9 @@ MainOffer.create([{ title: "Fotowoltaika",
 
 DesignatedCustomersImage.create([{text: "Dla domu"}, {text: "Dla firmy"}, {text: "Dla rolnictwa"}])
 
-Icon.create([{title: "O nas", description: "Maecenas libero dolor, auctor eget lectus id."},
-             {title: "Certyfikaty i szkolenia", description: "Nam porttitor augue ac finibus consequat. "},
-             {title: "Sprzedaż", description: "Etiam nisi diam, imperdiet a pulvinar vel. "},
-             {title: "Realizacje", description: "Proin purus augue, blandit vulputate tellus."}])
+Icon.create([{title: "O nas", description: "Maecenas libero dolor, auctor eget lectus id.", link: "o-nas"},
+             {title: "Certyfikaty i szkolenia", description: "Nam porttitor augue ac finibus consequat.", link: ""},
+             {title: "Sprzedaż", description: "Etiam nisi diam, imperdiet a pulvinar vel. ", link: "kontakt"},
+             {title: "Realizacje", description: "Proin purus augue, blandit vulputate tellus.", link: "realizacje"}])
 
 AboutUsParagraph.create([{title: "Kim jesteśmy?"}, {title: "Co oferujemy?"}, {title: "Co gwarantujemy?"}])
