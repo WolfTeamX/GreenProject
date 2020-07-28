@@ -10,6 +10,7 @@ class IconsController < ApplicationController
     @icon = Icon.find(params[:id])
     @icon.title = params[:title]
     @icon.description = params[:description]
+    @icon.link = params[:link]
     unless params[:image].nil?
       @icon.image.attach(params[:image])
     end

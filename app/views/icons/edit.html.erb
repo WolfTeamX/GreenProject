@@ -7,7 +7,8 @@
         <%= image_tag rails_blob_path(@icon.image), class: "icon" %>
       <% end %>
       <h4><%= @icon.title %></h4>
-      <p><%= @icon.description %></p><br><br>
+      <p><%= @icon.description %></p>
+      <h5>Przenosi do: <%= @icon.link %></h5>
     </div>
   </div>
   <br><hr><br>
@@ -16,6 +17,8 @@
     <%= f.text_field :title, value: @icon.title %><br><br>
     <p>Treść:</p><br>
     <%= f.text_area :description, value: @icon.description %><br><br>
+    <p>Przenosi do:</p><br>
+    <%= f.text_field :link, value: @icon.link %><br><br>
     <%= f.file_field :image, direct_upload: true %><br><br>
     <%= f.hidden_field :id, value: @icon.id %>
     <%= f.submit "Zapisz ikonkę", class: "button button-success" %>

@@ -125,11 +125,13 @@
     <div class="row">
       <% group.each do |icon| %>
         <div class="icon-box">
-          <% if icon.image.attached? %>
-            <%= image_tag rails_blob_path(icon.image), class: "icon" %>
+          <%= link_to icon.link, class: "no-link" do %>
+            <% if icon.image.attached? %>
+              <%= image_tag rails_blob_path(icon.image), class: "icon" %>
+            <% end %>
+            <h4><%= icon.title %></h4>
+            <p><%= icon.description %></p>
           <% end %>
-          <h4><%= icon.title %></h4>
-          <p><%= icon.description %></p>
         </div>
       <% end %>
     </div>
