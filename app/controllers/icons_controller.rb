@@ -15,6 +15,6 @@ class IconsController < ApplicationController
       @icon.image.attach(params[:image])
     end
     @icon.save
-    redirect_to(admin_index_path)
+    redirect_to edit_icon_path(@icon.id)
   end
 end

@@ -19,7 +19,7 @@
     <%= f.text_area :description, value: @icon.description %><br><br>
     <p>Przenosi do:</p><br>
     <%= f.text_field :link, value: @icon.link %><br><br>
-    <%= f.file_field :image, direct_upload: true %><br><br>
+    <%= f.file_field :image, direct_upload: true, accept: 'image/svg+xml' %><br><br>
     <%= f.hidden_field :id, value: @icon.id %>
     <%= f.submit "Zapisz ikonkę", class: "button button-success" %>
   <% end %>
