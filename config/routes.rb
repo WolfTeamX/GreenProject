@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   post '/admin/edytuj-podstrone' => 'sub_pages#update', as: :update_sub_page
 
   # Slides
-  get '/admin/dodaj-slajd' => 'admin#add_slide', as: :add_slide
+  get '/admin/dodaj-slajd' => 'slides#add_slide', as: :add_slide
   get '/admin/zarzadzaj-slajdami' => 'slides#manage', as: :manage_slides
   get '/admin/edytuj-slajd' => 'slides#edit', as: :edit_slide
   post '/admin/stworz-slajd' => 'slides#create', as: :create_slide

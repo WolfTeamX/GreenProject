@@ -11,10 +11,6 @@ class AdminController < ApplicationController
     @icons = Icon.all
   end
 
-  def add_slide
-    # something
-  end
-
   def settings
     if request.post?
       exists = Setting.exists? id: 1
