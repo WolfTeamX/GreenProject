@@ -1,4 +1,11 @@
 <div class="page-cover">
+  <% if user_signed_in? %>
+    <%= link_to edit_sub_page_path(@page.id) do %>
+      <div class="side-control">
+        <p>Zmień<br>zdjęcie</p>
+      </div>
+    <% end %>
+  <% end %>
   <div class="cut-in">
     <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   </div>
@@ -11,6 +18,11 @@
     </div>
   </div>
 </div>
+<% if user_signed_in? %>
+  <div class="middle-button">
+    <%= link_to "Dodaj nową realizację", add_realization_path, class: "button button-success" %>
+  </div>
+<% end %>
 <section class="no-padding">
   <div class="main-header">
     <div id="scroll-target" class="header-hover">
@@ -24,9 +36,12 @@
         <div class="row">
           <% group.each do |realization| %>
             <div class="col">
-              <%= link_to rails_blob_path(realization.image), { class: "lightbox" } do %>
+              <%= link_to rails_blob_path(realization.image), {class: "lightbox"} do %>
                 <%= image_tag rails_blob_path(realization.image) %>
               <% end %>
+              <% if user_signed_in? %>
+                <br><br><%= link_to "Usuń realizację", remove_realization_path(realization), class: "button button-success" %><br><br>
+            <% end %>
             </div>
           <% end %>
         </div>

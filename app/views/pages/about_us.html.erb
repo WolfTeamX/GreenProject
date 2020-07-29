@@ -1,4 +1,11 @@
 <div class="page-cover">
+  <% if user_signed_in? %>
+    <%= link_to edit_sub_page_path(@page.id) do %>
+      <div class="side-control">
+        <p>Zmień<br>zdjęcie</p>
+      </div>
+    <% end %>
+  <% end %>
   <div class="cut-in">
     <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   </div>
@@ -22,8 +29,10 @@
       </div>
       <div class="fifty about-title align-right">
         <h2 class="about-title"><%= paragraph.title %></h2>
-        <hr class="float-right"><br>
+        <hr class="float-right">
+        <br>
         <p><%= paragraph.content %></p>
+        <%= link_to "Edytuj element", edit_about_us_paragraph_path(paragraph), class: "button button-success" if user_signed_in? %>
       </div>
     </div>
   </div>
@@ -34,8 +43,10 @@
     <div class="row space-evenly">
       <div class="fifty about-title align-left">
         <h2><%= paragraph.title %></h2>
-        <hr class="float-left"><br>
+        <hr class="float-left">
+        <br>
         <p><%= paragraph.content %></p>
+        <%= link_to "Edytuj element", edit_about_us_paragraph_path(paragraph), class: "button button-success" if user_signed_in? %>
       </div>
       <div class="fifty">
         <% if paragraph.image.attached? %>
@@ -56,8 +67,10 @@
       </div>
       <div class="fifty about-title align-right">
         <h2 class="about-title"><%= paragraph.title %></h2>
-        <hr class="float-right"><br>
+        <hr class="float-right">
+        <br>
         <p><%= paragraph.content %></p>
+        <%= link_to "Edytuj element", edit_about_us_paragraph_path(paragraph), class: "button button-success" if user_signed_in? %>
       </div>
     </div>
   </div>
@@ -69,6 +82,11 @@
       <hr class="thematic-break">
     </div>
   </div>
+  <% if user_signed_in? %>
+    <div class="middle-button">
+      <%= link_to "Dodaj nowe województwo", add_voivodeship_path, class: "button button-success" %><br><br><br>
+    </div>
+  <% end %>
   <div class="voivodeships">
     <% @voivodeships.in_groups_of(3, false).each do |group| %>
       <div class="row">
@@ -78,6 +96,9 @@
               <%= image_tag rails_blob_path(voivodeship.image) if voivodeship.image.attached? %>
               <h2><%= voivodeship.name %></h2>
             </div>
+            <% if user_signed_in? %>
+              <br><%= link_to "Edytuj województwo", edit_voivodeship_path(voivodeship), class: "button button-success" %>
+          <% end %>
           </div>
         <% end %>
       </div>

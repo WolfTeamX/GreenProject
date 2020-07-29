@@ -1,4 +1,11 @@
 <div class="page-cover">
+  <% if user_signed_in? %>
+    <%= link_to edit_sub_page_path(@page.id) do %>
+      <div class="side-control">
+        <p>Zmień<br>zdjęcie</p>
+      </div>
+    <% end %>
+  <% end %>
   <div class="cut-in">
     <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   </div>
@@ -29,6 +36,7 @@
         <hr class="float-left">
         <p><%= offer.content %></p>
         <%= link_to "O fotowoltaice...", faq_path(id: 1), class: "ghost-button" %>
+        <%= link_to "Edytuj ofertę", edit_offer_paragraph_path(offer.id), class: "ghost-button" if user_signed_in? %>
       </div>
     </div>
     <div class="fifty no-padding offer-height">
@@ -49,6 +57,7 @@
         <hr class="float-right">
         <p><%= offer.content %></p>
         <%= link_to "O pompach ciepła...", faq_path(id: 2), class: "ghost-button" %>
+        <%= link_to "Edytuj ofertę", edit_offer_paragraph_path(offer.id), class: "ghost-button" if user_signed_in? %>
       </div>
     </div>
   </div>
@@ -63,6 +72,7 @@
         <hr class="float-left">
         <p><%= offer.content %></p>
         <%= link_to "O klimatyzacji...", faq_path(id: 3), class: "ghost-button" %>
+        <%= link_to "Edytuj ofertę", edit_offer_paragraph_path(offer.id), class: "ghost-button" if user_signed_in? %>
       </div>
     </div>
     <div class="fifty no-padding offer-height">

@@ -10,7 +10,12 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-<div id="css-loader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+<div id="css-loader" class="lds-ellipsis">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
 <nav>
   <div class="nav-left">
   </div>
@@ -36,6 +41,9 @@
     </ul>
   </div>
   <div class="nav-right">
+    <div class="logout">
+      <%= link_to 'Wyloguj się', destroy_user_session_path, method: :delete if user_signed_in? %>
+    </div>
   </div>
 </nav>
 <div id="yield" class="yield fading">
@@ -49,6 +57,9 @@
         <p>
           <% footer = Footer.find(1) %>
           <%= footer.description %>
+          <% if user_signed_in? %>
+            <br><br><%= link_to "Edytuj opis", edit_footer_path(footer), class: "button button-success" %>
+          <% end %>
         </p>
       </div>
       <div class="footer-content">
@@ -60,6 +71,9 @@
           Telefon: <%= contact.phone %><br><br>
           Email: <%= contact.email %><br><br>
           Adres: <%= contact.address %>
+          <% if user_signed_in? %>
+            <br><br><%= link_to "Edytuj kontakt", edit_contact_info_path, class: "button button-success" %>
+          <% end %>
         </p>
       </div>
     </div>
