@@ -1,4 +1,11 @@
 <div class="page-cover">
+  <% if user_signed_in? %>
+    <%= link_to edit_sub_page_path(@page.id) do %>
+      <div class="side-control">
+        <p>Zmień<br>zdjęcie</p>
+      </div>
+    <% end %>
+  <% end %>
   <div class="cut-in">
     <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   </div>
@@ -11,11 +18,12 @@
     </div>
   </div>
 </div>
-
-
+<% if user_signed_in? %>
+  <div class="middle-button">
+    <%= link_to "Edytuj informacje kontaktowe", edit_contact_info_path, class: "button button-success" %>
+  </div>
+<% end %>
 <section class="no-padding contact">
-  <%#= image_tag 'plains.jpg' %>
-
   <div class="row">
     <div class="fifty shadow">
       <div class="content">
@@ -49,7 +57,7 @@
       </div>
     </div>
     <div class="fifty contact-padding shadow">
-      <%= image_tag 'plains.jpg', class: "contact-img contact-height"  %>
+      <%= image_tag 'plains.jpg', class: "contact-img contact-height" %>
       <div class="side-content">
         <div class="row">
           <%= image_tag 'svg/map-pin.svg' %><h3>Nasz adres</h3>

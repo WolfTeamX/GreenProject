@@ -1,0 +1,12 @@
+$('#realizations').append('<div class="row"> <%= j render @certificates %> </div>');
+
+<% @certificates.each do |certificate| %>
+window.tobii.add(document.getElementById('<%= certificate.id %>'));
+<% end %>
+
+<% if @certificates.next_page %>
+$('.pagination').replaceWith('<%= j will_paginate @certificates %>');
+<% else %>
+$(window).off('scroll');
+$('.pagination').remove();
+<% end %>

@@ -18,7 +18,7 @@ FaqPage.create([{title: "Fotowoltaika"},
                        {title: "Pompa ciepła"},
                        {title: "Klimatyzacja"}])
 
-SubPage.create([{title: "O nas"}, {title: "Nasza oferta"}, {title: "Portfolio"}, {title: "Kontakt"}])
+SubPage.create([{title: "O nas"}, {title: "Nasza oferta"}, {title: "Portfolio"}, {title: "Kontakt"}, {title: "Certyfikaty"}])
 
 OfferParagraph.create([{header: "Energia z gwiazd", title: "Fotowoltaika",
                         content: "Instalacje fotowoltaiczne zamieniają energie słoneczną na prąd elektryczny,
@@ -42,7 +42,7 @@ MainOffer.create([{ title: "Fotowoltaika",
 DesignatedCustomersImage.create([{text: "Dla domu"}, {text: "Dla firmy"}, {text: "Dla rolnictwa"}])
 
 Icon.create([{title: "O nas", description: "Maecenas libero dolor, auctor eget lectus id.", link: "o-nas"},
-             {title: "Certyfikaty i szkolenia", description: "Nam porttitor augue ac finibus consequat.", link: ""},
+             {title: "Certyfikaty i szkolenia", description: "Nam porttitor augue ac finibus consequat.", link: "certyfikaty"},
              {title: "Sprzedaż", description: "Etiam nisi diam, imperdiet a pulvinar vel. ", link: "kontakt"},
              {title: "Realizacje", description: "Proin purus augue, blandit vulputate tellus.", link: "realizacje"}])
 

@@ -1,4 +1,11 @@
 <div class="slideshow-container">
+  <% if user_signed_in? %>
+    <%= link_to manage_slides_path do %>
+      <div class="side-control">
+        <p>Zarządzaj<br>slajdami</p>
+      </div>
+    <% end %>
+  <% end %>
   <% @slides.each do |slide| %>
     <div class="slide transparent">
       <% if slide.image.attached? %>
@@ -8,6 +15,7 @@
         <div class="slide-box">
           <h3><%= slide.title %></h3>
           <p><%= slide.content %></p>
+          <%= link_to "Edytuj bieżący slajd", edit_slide_path(slide), class: "button button-success" if user_signed_in? %>
         </div>
       </div>
     </div>
@@ -39,6 +47,7 @@
       <hr>
       <p><%= offer.description %></p>
       <%= link_to "Zobacz więcej...", about_photovoltaics_path, class: "underline" %>
+      <%= link_to "Edytuj ofertę", edit_offer_path(offer), class: "button button-success" if user_signed_in? %>
     </div>
     <% offer = @offers.second %>
     <div class="box">
@@ -53,6 +62,7 @@
       <hr>
       <p><%= offer.description %></p>
       <%= link_to "Zobacz więcej...", about_heat_pump_path, class: "underline" %>
+      <%= link_to "Edytuj ofertę", edit_offer_path(offer), class: "button button-success" if user_signed_in? %>
     </div>
     <% offer = @offers.third %>
     <div class="box">
@@ -67,6 +77,7 @@
       <hr>
       <p><%= offer.description %></p>
       <%= link_to "Zobacz więcej...", about_air_conditioning_path, class: "underline" %>
+      <%= link_to "Edytuj ofertę", edit_offer_path(offer), class: "button button-success" if user_signed_in? %>
     </div>
   </div>
 </section>
@@ -82,6 +93,7 @@
       <div class="box-text">
         <%= image_tag("icons/house-light.png", :alt => "House") %>
         <h2><%= image.text %></h2>
+        <%= link_to "Edytuj zdjęcie", edit_designated_image_path(image), class: "button button-success" if user_signed_in? %>
       </div>
     </div>
     <div class="image-border">
@@ -96,6 +108,7 @@
       <div class="box-text">
         <%= image_tag("icons/company-light.png", :alt => "Company") %>
         <h2><%= image.text %></h2>
+        <%= link_to "Edytuj zdjęcie", edit_designated_image_path(image), class: "button button-success" if user_signed_in? %>
       </div>
     </div>
     <div class="image-border">
@@ -110,6 +123,7 @@
       <div class="box-text">
         <%= image_tag("icons/farm-light.png", :alt => "Farm") %>
         <h2><%= image.text %></h2>
+        <%= link_to "Edytuj zdjęcie", edit_designated_image_path(image), class: "button button-success" if user_signed_in? %>
       </div>
     </div>
   </div>
@@ -132,6 +146,7 @@
             <h4><%= icon.title %></h4>
             <p><%= icon.description %></p>
           <% end %>
+          <%= link_to "Edytuj ikonkę", edit_icon_path(icon), class: "button button-success" if user_signed_in? %>
         </div>
       <% end %>
     </div>

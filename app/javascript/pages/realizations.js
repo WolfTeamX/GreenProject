@@ -23,7 +23,7 @@ document.addEventListener("turbolinks:load", function () {
             var more_posts_url;
             more_posts_url = $('.pagination .next_page').attr('href');
             if (more_posts_url && $('#infinite-scrolling').inView() && $.active === 0) {
-                $('.pagination').html('<img src="#" alt="Loading..." title="Loading..." />');
+                //$('.pagination').html('<img src="#" alt="Loading..." title="Loading..." />');
                 $.getScript(more_posts_url);
             }
         });

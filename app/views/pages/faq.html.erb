@@ -1,10 +1,22 @@
 <div class="page-header">
+  <% if user_signed_in? %>
+    <%= link_to edit_faq_page_path(@page.id) do %>
+      <div class="side-control">
+        <p>Zmień<br>zdjęcie</p>
+      </div>
+    <% end %>
+  <% end %>
   <%= image_tag rails_blob_path(@page.image) if @page.image.attached? %>
   <div class="header-text">
     <%= @page.title %>
   </div>
 </div>
 <section class="no-padding">
+  <% if user_signed_in? %>
+    <div class="middle-button">
+      <%= link_to "Dodaj nowe pytanie", add_faq_question_path(@page.id), class: "button button-success" %>
+    </div>
+  <% end %>
   <div class="about-container">
     <% @page.faq_questions.each do |question| %>
       <h3><%= question.title %></h3>
@@ -12,6 +24,7 @@
       <p>
         <%= question.answer %>
       </p>
+      <%= link_to "Edytuj pytanie", edit_faq_question_path(question.id), class: "button button-success" if user_signed_in? %>
       <br>
     <% end %>
   </div>

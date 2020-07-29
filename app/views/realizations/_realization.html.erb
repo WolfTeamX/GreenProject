@@ -2,6 +2,8 @@
   <%= link_to rails_blob_path(realization.image), {class: "lightbox", id: realization.id} do %>
     <%= image_tag rails_blob_path(realization.image) %>
   <% end %>
-  <br><br><%= link_to "Usuń realizację", remove_realization_path(realization), class: "button button-success" %>
+  <% if user_signed_in? %>
+    <br><br><%= link_to "Usuń realizację", remove_realization_path(realization), class: "button button-success" %>
+  <% end %>
   <br><br>
 </div>
