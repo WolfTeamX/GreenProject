@@ -1,6 +1,5 @@
 class MainOffersController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def edit
     @offer = MainOffer.find(params[:format])

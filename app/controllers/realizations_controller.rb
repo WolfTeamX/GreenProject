@@ -1,6 +1,5 @@
 class RealizationsController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def add
 

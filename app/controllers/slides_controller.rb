@@ -1,6 +1,5 @@
 class SlidesController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def add
     # method description

@@ -1,6 +1,5 @@
 class FootersController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def edit
     @footer = Footer.find(params[:format])

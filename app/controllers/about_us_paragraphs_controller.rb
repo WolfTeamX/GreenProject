@@ -1,6 +1,5 @@
 class AboutUsParagraphsController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def edit
     @paragraph = AboutUsParagraph.find(params[:format])

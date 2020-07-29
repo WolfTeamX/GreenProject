@@ -1,6 +1,5 @@
 class ContactInfoController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def edit
     @contact = ContactInfo.find(1)

@@ -1,6 +1,5 @@
 class FaqQuestionsController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def add
     @page = FaqPage.find(params[:format])

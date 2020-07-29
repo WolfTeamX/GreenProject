@@ -1,6 +1,5 @@
 class DesignatedCustomersImagesController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def edit
     @image = DesignatedCustomersImage.find(params[:format])

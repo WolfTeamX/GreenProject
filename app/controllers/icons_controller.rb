@@ -1,6 +1,5 @@
 class IconsController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def edit
     @icon = Icon.find(params[:format])

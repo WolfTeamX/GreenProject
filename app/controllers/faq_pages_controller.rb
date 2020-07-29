@@ -1,6 +1,5 @@
 class FaqPagesController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def edit
     @page = FaqPage.find(params[:format])

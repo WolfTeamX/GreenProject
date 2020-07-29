@@ -1,6 +1,5 @@
 class SubPagesController < ApplicationController
   before_action :authenticate_user!
-  layout 'admin'
 
   def edit
     @page = SubPage.find(params[:format])
