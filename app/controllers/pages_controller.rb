@@ -31,6 +31,16 @@ class PagesController < ApplicationController
     end
   end
 
+  def certificates
+    @certificates = Certificate.paginate(page: params[:page], per_page: 4).order('created_at DESC')
+    @page = SubPage.find(5)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def sale
     # Do sth here...
   end

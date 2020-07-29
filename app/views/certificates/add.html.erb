@@ -1,0 +1,10 @@
+<div class="admin-edit">
+  <h1>Stwórz certyfikat</h1>
+  <p>Możesz też dodać kilka certyfikatów naraz</p>
+  <hr>
+  <%= form_with url: create_certificate_path do |f| %>
+    <p>Dodaj zdjęcie/zdjęcia:</p><br>
+    <%= f.file_field :image, multiple: true, direct_upload: true %><br><br>
+    <%= f.submit "Dodaj certyfikaty", class: "button button-success" %>
+  <% end %>
+</div>

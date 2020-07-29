@@ -1,0 +1,9 @@
+<div class="col">
+  <%= link_to rails_blob_path(certificate.image), {class: "lightbox", id: certificate.id} do %>
+    <%= image_tag rails_blob_path(certificate.image) %>
+  <% end %>
+  <% if user_signed_in? %>
+    <br><br><%= link_to "Usuń certyfikat", remove_certificate_path(certificate), class: "button button-success" %>
+  <% end %>
+  <br><br>
+</div>

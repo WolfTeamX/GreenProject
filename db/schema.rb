@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_183746) do
+ActiveRecord::Schema.define(version: 2020_07_28_130624) do
 
   create_table "about_us_paragraphs", force: :cascade do |t|
     t.string "title"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(version: 2020_07_17_183746) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "contact_infos", force: :cascade do |t|
+    t.string "address"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "designated_customers_images", force: :cascade do |t|
     t.string "text"
     t.datetime "created_at", precision: 6, null: false
@@ -69,11 +77,18 @@ ActiveRecord::Schema.define(version: 2020_07_17_183746) do
     t.index ["faq_page_id"], name: "index_faq_questions_on_faq_page_id"
   end
 
+  create_table "footers", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "icons", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "link"
   end
 
   create_table "main_offers", force: :cascade do |t|
@@ -96,13 +111,6 @@ ActiveRecord::Schema.define(version: 2020_07_17_183746) do
   end
 
   create_table "realizations", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "settings", force: :cascade do |t|
-    t.text "short_description"
-    t.text "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -134,7 +142,6 @@ ActiveRecord::Schema.define(version: 2020_07_17_183746) do
 
   create_table "voivodeships", force: :cascade do |t|
     t.string "name"
-    t.boolean "active"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

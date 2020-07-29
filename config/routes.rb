@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/o-nas/' => 'pages#about_us', as: :about_as
   get '/oferta/' => 'pages#offer', as: :offer
   get '/realizacje/' => 'pages#realizations', as: :realizations
+  get '/certyfikaty/' => 'pages#certificates', as: :certificates
   get '/sprzedaż/' => 'pages#sale', as: :sale
   get '/kontakt/' => 'pages#contact', as: :contact
   post '/kontakt/' => 'pages#contact', as: :contact_post
@@ -48,6 +49,11 @@ Rails.application.routes.draw do
   get '/admin/realizations/dodaj' => 'realizations#add', as: :add_realization
   post '/admin/realizations/stworz' => 'realizations#create', as: :create_realization
   post '/admin/realizations' => 'realizations#destroy_realization', as: :remove_realization
+
+  # Certificates
+  get '/certyfikaty/dodaj' => 'certificates#add', as: :add_certificate
+  post '/certyfikaty/stworz' => 'certificates#create', as: :create_certificate
+  post '/certyfikaty/usun' => 'certificates#destroy_certificate', as: :remove_certificate
 
   # Other settings
   get '/admin/settings' => 'admin#settings', as: :settings

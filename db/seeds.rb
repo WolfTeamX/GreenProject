@@ -18,7 +18,7 @@ FaqPage.create([{title: "Fotowoltaika"},
                        {title: "Pompa ciepła"},
                        {title: "Klimatyzacja"}])
 
-SubPage.create([{title: "O nas"}, {title: "Nasza oferta"}, {title: "Portfolio"}, {title: "Kontakt"}])
+SubPage.create([{title: "O nas"}, {title: "Nasza oferta"}, {title: "Portfolio"}, {title: "Kontakt"}, {title: "Certyfikaty"}])
 
 OfferParagraph.create([{header: "Energia z gwiazd", title: "Fotowoltaika",
                         content: "Instalacje fotowoltaiczne zamieniają energie słoneczną na prąd elektryczny,
