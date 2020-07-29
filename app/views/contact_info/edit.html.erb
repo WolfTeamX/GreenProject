@@ -4,6 +4,9 @@
   <h2>Adres: &ensp;<%= @contact.address %></h2><br>
   <h2>Telefon: &ensp;<%= @contact.phone %></h2><br>
   <h2>Email: &ensp;<%= @contact.email %></h2><br>
+  <% if @contact.image.attached? %>
+    <%= image_tag rails_blob_path(@contact.image), class: "slide-image" %>
+  <% end %>
   <br><hr><br>
   <%= form_with url: update_contact_info_path do |f| %>
     <p>Adres:</p><br>
@@ -12,6 +15,8 @@
     <%= f.text_field :phone, value: @contact.phone %><br><br>
     <p>Email:</p><br>
     <%= f.text_field :email, value: @contact.email %><br><br>
+    <p>Tło:</p><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
     <%= f.submit "Zapisz informacje kontaktowe", class: "button button-success" %>
   <% end %>
 </div>

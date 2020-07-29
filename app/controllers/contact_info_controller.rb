@@ -10,6 +10,7 @@ class ContactInfoController < ApplicationController
     @contact.address = params[:address]
     @contact.phone = params[:phone]
     @contact.email = params[:email]
+    @contact.image.attach(params[:image]) unless params[:image].nil?
     @contact.save
     redirect_back fallback_location: root_path
   end
