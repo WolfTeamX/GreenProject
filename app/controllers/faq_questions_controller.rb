@@ -19,7 +19,11 @@ class FaqQuestionsController < ApplicationController
   end
 
   def update
-    abort params.inspect
+    @question = FaqQuestion.find(params[:faq_question][:id])
+    @question.title = params[:faq_question][:title]
+    @question.answer = params[:faq_question][:answer]
+    @question.save
+    redirect_back fallback_location: root_path
   end
 
   def destroy

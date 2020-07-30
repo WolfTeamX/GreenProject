@@ -9,6 +9,7 @@
     <%= f.text_field :title %><br><br>
     <p>Odpowiedź:</p><br>
     <%= f.rich_text_area :answer %><br><br>
+    <%= f.hidden_field :id %>
     <%= f.submit "Zapisz pytanie", class: "button button-success" %>
   <% end %>
 </div>

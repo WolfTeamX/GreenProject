@@ -70,7 +70,7 @@ Rails.application.routes.draw do
   get '/dodaj-faq/' => 'faq_questions#add', as: :add_faq_question
   post '/dodaj-faq/' => 'faq_questions#create', as: :create_faq_question
   get '/edytuj-pytanie-faq/' => 'faq_questions#edit', as: :edit_faq_question
-  post '/edytuj-pytanie-faq/' => 'faq_questions#edit', as: :update_faq_question
+  patch '/zapisz-pytanie-faq/' => 'faq_questions#update', as: :update_faq_question
   post '/usun-faq/' => 'faq_questions#destroy', as: :destroy_faq_question
 
   # Contact
