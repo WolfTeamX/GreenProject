@@ -11,7 +11,7 @@ class FaqQuestionsController < ApplicationController
     @question.answer = params[:answer]
     @question.faq_page_id = params[:page]
     @question.save
-    redirect_to offer_admin_path
+    redirect_to faq_path(id: params[:page])
   end
 
   def edit

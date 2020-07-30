@@ -14,6 +14,6 @@ class IconsController < ApplicationController
       @icon.image.attach(params[:image])
     end
     @icon.save
-    redirect_to edit_icon_path(@icon.id)
+    redirect_back fallback_location: root_path
   end
 end

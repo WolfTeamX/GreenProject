@@ -11,12 +11,12 @@ class RealizationsController < ApplicationController
       realization.image.attach(image)
       realization.save
     end
-    redirect_to realizations_admin_path
+    redirect_to realizations_path
   end
 
   def destroy_realization
     realization = Realization.find(params[:format])
     realization.destroy
-    redirect_to realizations_admin_path
+    redirect_to realizations_path
   end
 end

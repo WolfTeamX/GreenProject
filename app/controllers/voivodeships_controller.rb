@@ -10,7 +10,7 @@ class VoivodeshipsController < ApplicationController
     voivodeship.name = params[:name]
     voivodeship.image.attach(params[:image]) unless params[:image].nil?
     voivodeship.save
-    redirect_to about_us_admin_path
+    redirect_to about_as_path
   end
 
   def edit
@@ -22,12 +22,12 @@ class VoivodeshipsController < ApplicationController
     voivodeship.name = params[:voivodeship][:name]
     voivodeship.image.attach(params[:voivodeship][:image]) unless params[:voivodeship][:image].nil?
     voivodeship.save
-    redirect_to about_us_admin_path
+    redirect_to about_as_path
   end
 
   def destroy_voivodeship
     voivodeship = Voivodeship.find(params[:id])
     voivodeship.destroy
-    redirect_to about_us_admin_path
+    redirect_to about_as_path
   end
 end

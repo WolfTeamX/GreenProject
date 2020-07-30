@@ -16,6 +16,6 @@ class OfferParagraphsController < ApplicationController
     end
     @offer.save
 
-    redirect_to offer_admin_path
+    redirect_back fallback_location: root_path
   end
 end

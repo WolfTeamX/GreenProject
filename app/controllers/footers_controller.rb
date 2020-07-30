@@ -9,6 +9,6 @@ class FootersController < ApplicationController
     footer = Footer.find(1)
     footer.description = params[:footer][:description]
     footer.save
-    redirect_to admin_index_path
+    redirect_back fallback_location: root_path
   end
 end

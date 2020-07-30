@@ -12,6 +12,6 @@ class AboutUsParagraphsController < ApplicationController
     unless params[:image].nil?
       @paragraph.image.attach(params[:image])
     end
-    redirect_to about_us_admin_path
+    redirect_back fallback_location: root_path
   end
 end

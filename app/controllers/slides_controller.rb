@@ -11,7 +11,7 @@ class SlidesController < ApplicationController
     slide.content = params[:content]
     slide.image.attach(params[:image])
     slide.save
-    redirect_to admin_index_path
+    redirect_to manage_slides_path
   end
 
   def edit
@@ -21,7 +21,7 @@ class SlidesController < ApplicationController
   def destroy
     slide = Slide.find(params[:format])
     slide.destroy
-    redirect_to admin_index_path
+    redirect_to manage_slides_path
   end
 
   def manage
@@ -35,6 +35,6 @@ class SlidesController < ApplicationController
     sld.content = slide[:content]
     sld.image.attach(slide[:image]) unless slide[:image].nil?
     sld.save
-    redirect_to admin_index_path
+    redirect_back fallback_location: root_path
   end
 end

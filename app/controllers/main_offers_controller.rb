@@ -13,6 +13,6 @@ class MainOffersController < ApplicationController
       @offer.image.attach(params[:image])
     end
     @offer.save
-    redirect_to(admin_index_path)
+    redirect_back fallback_location: root_path
   end
 end
