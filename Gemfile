@@ -19,6 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'devise'
 # Use will_paginate for infinite scroll
 gem 'will_paginate', '~> 3.1.0'
+# Use image_processing for image formatting
+gem 'image_processing'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
