@@ -987,6 +987,20 @@ footer {
   }
 }
 
+.offer-down {
+  text-align: center;
+  text-align: -moz-center;
+  padding: 10px 0 60px 0;
+
+  .ghost-button {
+
+    font-size: 24px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 .page-cover {
   img {
     width: 100%;
