@@ -16,6 +16,7 @@ require("@rails/activestorage").start();
 // const imagePath = (name) => images(name, true)
 
 require("../../javascript/pages/main_page");
+require("../../javascript/pages/img_loading");
 require("../../javascript/pages/turbolinks-fade");
 require("../../javascript/pages/contact_validation");
 require("../../javascript/pages/realizations");

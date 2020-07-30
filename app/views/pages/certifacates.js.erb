@@ -2,6 +2,9 @@ $('#realizations').append('<div class="row"> <%= j render @certificates %> </div
 
 <% @certificates.each do |certificate| %>
 window.tobii.add(document.getElementById('<%= certificate.id %>'));
+document.getElementById('<%= certificate.id %>').getElementsByTagName('img')[0].addEventListener('load', function(event) {
+    event.target.classList.add('no-opacity');
+});
 <% end %>
 
 <% if @certificates.next_page %>

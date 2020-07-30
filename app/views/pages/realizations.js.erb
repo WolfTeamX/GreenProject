@@ -2,6 +2,9 @@ $('#realizations').append('<div class="row"> <%= j render @realizations %> </div
 
 <% @realizations.each do |realization| %>
 window.tobii.add(document.getElementById('<%= realization.id %>'));
+document.getElementById('<%= realization.id %>').getElementsByTagName('img')[0].addEventListener('load', function(event) {
+    event.target.classList.add('no-opacity');
+});
 <% end %>
 
 <% if @realizations.next_page %>
