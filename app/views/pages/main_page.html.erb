@@ -46,7 +46,7 @@
       <h3><%= offer.title %></h3>
       <hr>
       <p><%= offer.description %></p>
-      <%= link_to "Zobacz więcej...", about_photovoltaics_path, class: "underline" %>
+      <%= link_to "Zobacz więcej...", faq_path(id: 1), class: "underline" %>
       <%= link_to "Edytuj ofertę", edit_offer_path(offer), class: "button button-success" if user_signed_in? %>
     </div>
     <% offer = @offers.second %>
@@ -61,7 +61,7 @@
       <h3><%= offer.title %></h3>
       <hr>
       <p><%= offer.description %></p>
-      <%= link_to "Zobacz więcej...", about_heat_pump_path, class: "underline" %>
+      <%= link_to "Zobacz więcej...", faq_path(id: 2), class: "underline" %>
       <%= link_to "Edytuj ofertę", edit_offer_path(offer), class: "button button-success" if user_signed_in? %>
     </div>
     <% offer = @offers.third %>
@@ -76,7 +76,7 @@
       <h3><%= offer.title %></h3>
       <hr>
       <p><%= offer.description %></p>
-      <%= link_to "Zobacz więcej...", about_air_conditioning_path, class: "underline" %>
+      <%= link_to "Zobacz więcej...", faq_path(id: 3), class: "underline" %>
       <%= link_to "Edytuj ofertę", edit_offer_path(offer), class: "button button-success" if user_signed_in? %>
     </div>
   </div>

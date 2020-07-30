@@ -11,10 +11,8 @@ Rails.application.routes.draw do
   get '/kontakt/' => 'pages#contact', as: :contact
   post '/kontakt/' => 'pages#contact', as: :contact_post
 
+  # Faqs
   get 'oferta/faq/:id' => 'pages#faq', as: :faq
-  get '/oferta/o-fotowoltaice/' => 'pages#about_photovoltaics', as: :about_photovoltaics
-  get '/oferta/o-pompie-ciepla/' => 'pages#about_heat_pump', as: :about_heat_pump
-  get '/oferta/o-klimatyzacji/' => 'pages#about_air_conditioning', as: :about_air_conditioning
 
   # Footer
   get '/edytuj-stopke/' => 'footers#edit', as: :edit_footer
