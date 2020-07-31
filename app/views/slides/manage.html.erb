@@ -10,9 +10,13 @@
       <h3><%= slide.title %></h3>
       <p><%= slide.content %></p>
       <%= image_tag rails_blob_path(slide.image), class: "slide-image" %>
-      <%= button_to "Usuń slajd", remove_slide_path(slide), method: :delete,
-                    class: "button button-error", data: {confirm: "Jesteś pewien, że chcesz usunąć ten slajd?"} %>
+      <div class="row">
+        <%= button_to "Edytuj slajd", edit_slide_path(slide), method: :get ,class: "button button-success" %>
+        <p>&ensp;</p>
+        <%= button_to "Usuń slajd", remove_slide_path(slide), method: :delete,
+                      class: "button button-error", data: {confirm: "Jesteś pewien, że chcesz usunąć ten slajd?"} %>
+      </div>
     <% end %>
-    <br><br><%= link_to "Dodaj slajd", add_slide_path, class: "button button-success" %>
+    <br><br><%= link_to "Dodaj nowy slajd", add_slide_path, class: "button button-success" %>
   </div>
 </div>
