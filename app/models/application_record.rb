@@ -25,8 +25,8 @@ class ApplicationRecord < ActiveRecord::Base
         @compressed_image = true
         processed = ImageProcessing::MiniMagick
                         .source(ActiveStorage::Blob.service.path_for(image.key))
+                        .resize_to_limit(1920, 1920)
                         .call
-        .resize_to_limit(1920, 1920)
         self.image.attach(io: processed, filename: self.image.blob.filename, content_type: self.image.blob.content_type)
       end
     end
