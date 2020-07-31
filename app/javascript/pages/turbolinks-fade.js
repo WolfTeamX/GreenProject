@@ -28,7 +28,6 @@ document.addEventListener("turbolinks:before-visit", function (event) {
     setTimeout(function () {
         Turbolinks.visit(event.data.url);
         lastVisitedPage = event.data.url;
-        console.log("last page is now: " + lastVisitedPage);
         showLoader(false);
     }, 500);
 });
@@ -55,7 +54,6 @@ document.addEventListener("turbolinks:load", function (event) {
                 pageYield.classList.add("fading");
                 lastVisitedPage = event.data.url;
                 submit = true;
-                console.log("last page is now: " + lastVisitedPage);
                 showLoader(true);
             }
         })
