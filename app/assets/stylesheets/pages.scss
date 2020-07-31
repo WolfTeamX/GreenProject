@@ -1625,6 +1625,16 @@ footer {
   }
 }
 
+.tobii__slider-slide {
+  div {
+    figure {
+      img {
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+
 .pagination {
   display: none;
 }
