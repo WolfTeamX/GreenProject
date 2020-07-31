@@ -40,7 +40,7 @@
                 <%= image_tag rails_blob_path(realization.image) %>
               <% end %>
               <% if user_signed_in? %>
-                <br><br><%= link_to "Usuń realizację", remove_realization_path(realization), class: "button button-success" %><br><br>
+                <br><br><%= button_to "Usuń realizację", remove_realization_path(realization), class: "button button-success" %><br><br>
             <% end %>
             </div>
           <% end %>
