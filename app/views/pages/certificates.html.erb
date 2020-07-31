@@ -40,7 +40,7 @@
                 <%= image_tag rails_blob_path(certificate.image) %>
               <% end %>
               <% if user_signed_in? %>
-                <br><br><%= link_to "Usuń certyfikat", remove_certificate_path(certificate), class: "button button-success" %><br><br>
+                <br><br><%= button_to "Usuń certyfikat", remove_certificate_path(certificate), class: "button button-success" %><br><br>
             <% end %>
             </div>
           <% end %>
