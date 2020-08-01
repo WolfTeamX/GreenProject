@@ -20,6 +20,7 @@ class ApplicationRecord < ActiveRecord::Base
     if defined? image
       if self.image.attached?
         if @compressed_image || self.image.blob.content_type == "image/svg+xml"
+          @compressed_image = false
           return
         end
         @compressed_image = true
