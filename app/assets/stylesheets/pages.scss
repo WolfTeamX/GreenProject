@@ -1477,8 +1477,86 @@ footer {
   }
 }
 
+@media(max-aspect-ratio: 160/89) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 60%;
+      }
+    }
+  }
+}
+
+@media(max-aspect-ratio: 11/8) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 64%;
+      }
+    }
+  }
+}
+
 @media(max-width: 1279px)
 {
+  @media (max-aspect-ratio: 160/89) {
+    .page-cover {
+      .cut-in {
+        &:after {
+          top: 59%;
+        }
+      }
+    }
+  }
+
+  @media (max-aspect-ratio: 3/2) {
+    .page-cover {
+      .cut-in {
+        &:after {
+          top: 45%;
+        }
+      }
+    }
+  }
+
+  @media (max-aspect-ratio: 1/1) {
+    .page-cover {
+      .cut-in {
+        &:after {
+          top: 48%;
+        }
+      }
+    }
+  }
+
+  @media (max-aspect-ratio: 6/8) {
+    .page-cover {
+      .cut-in {
+        &:after {
+          top: 50%;
+        }
+      }
+    }
+  }
+
+  @media (max-aspect-ratio: 5/8) {
+    .page-cover {
+      .cut-in {
+        &:after {
+          top: 51%;
+        }
+      }
+    }
+  }
+  @media (max-aspect-ratio: 3/8) {
+    .page-cover {
+      .cut-in {
+        &:after {
+          top: 53%;
+        }
+      }
+    }
+  }
   .fifty {
     .offer-img {
       filter: saturate(1);
@@ -1633,75 +1711,6 @@ footer {
     figure {
       img {
         opacity: 1 !important;
-      }
-    }
-  }
-}
-
-@media (max-aspect-ratio: 160/89) {
-  .page-cover {
-    .cut-in {
-      &:after {
-        top: 58%;
-      }
-    }
-  }
-}
-
-@media (max-aspect-ratio: 3/2) {
-  .page-cover {
-    .cut-in {
-      &:after {
-        top: 62%;
-      }
-    }
-  }
-}
-
-@media (max-aspect-ratio: 6/5) {
-  .page-cover {
-    .cut-in {
-      &:after {
-        top: 44%;
-      }
-    }
-  }
-}
-
-@media (max-aspect-ratio: 1/1) {
-  .page-cover {
-    .cut-in {
-      &:after {
-        top: 48%;
-      }
-    }
-  }
-}
-
-@media (max-aspect-ratio: 6/8) {
-  .page-cover {
-    .cut-in {
-      &:after {
-        top: 50%;
-      }
-    }
-  }
-}
-
-@media (max-aspect-ratio: 5/8) {
-  .page-cover {
-    .cut-in {
-      &:after {
-        top: 51%;
-      }
-    }
-  }
-}
-@media (max-aspect-ratio: 3/8) {
-  .page-cover {
-    .cut-in {
-      &:after {
-        top: 53%;
       }
     }
   }
