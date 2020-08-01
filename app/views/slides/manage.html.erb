@@ -14,7 +14,7 @@
         <%= button_to "Edytuj slajd", edit_slide_path(slide), method: :get ,class: "button button-success" %>
         <p>&ensp;</p>
         <%= button_to "Usuń slajd", remove_slide_path(slide), method: :delete,
-                      class: "button button-error", data: {confirm: "Jesteś pewien, że chcesz usunąć ten slajd?"} %>
+                      class: "button button-error contact-submit", data: {confirm: "Jesteś pewien, że chcesz usunąć ten slajd?"} %>
       </div>
     <% end %>
     <br><br><%= link_to "Dodaj nowy slajd", add_slide_path, class: "button button-success" %>
