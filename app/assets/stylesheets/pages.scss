@@ -1703,6 +1703,19 @@ footer {
   }
 }
 
+@media(min-aspect-ratio: 5/4) {
+  .background-image {
+    height: 60vh;
+  }
+  .slide-banner {
+    height: 60vh;
+  }
+
+  section {
+    padding: 60vh 0 0 0;
+  }
+}
+
 .tobii__slider-slide {
   div {
     figure {
