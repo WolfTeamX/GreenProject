@@ -11,7 +11,7 @@
     <p>Tytuł:</p><br>
     <%= f.text_field :title %><br><br>
     <p>Treść:</p><br>
-    <%= f.text_field :content %><br><br>
+    <%= f.text_area :content %><br><br>
     <%= f.file_field :image, direct_upload: true %><br><br>
     <%= f.hidden_field :id %>
     <%= f.submit "Zapisz slajd", class: "button button-success" %>
