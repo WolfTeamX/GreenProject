@@ -924,7 +924,7 @@ footer {
 
     p {
       font-size: 18px;
-      margin-bottom: 100px;
+      margin-bottom: 80px;
     }
 
     hr {
@@ -1437,7 +1437,7 @@ footer {
     font-size: 20px;
   }
   .offer-height {
-    height: 800px;
+    height: 700px;
   }
 }
 
@@ -1464,7 +1464,7 @@ footer {
     font-size: 18px;
   }
   .offer-height {
-    height: 700px;
+    height: 600px;
   }
 
   .voivodeships {
@@ -1585,7 +1585,14 @@ footer {
   }
 
   .offer-height {
-    height: 600px;
+    height: 500px;
+  }
+  .fifty {
+    .offer {
+      p {
+        margin-bottom: 30px;
+      }
+    }
   }
 
   .offer {
