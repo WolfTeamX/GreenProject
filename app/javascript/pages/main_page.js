@@ -29,7 +29,7 @@ document.addEventListener("turbolinks:load", function () {
         }
         slides[slideIndex-1].classList.remove("transparent");
         dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 7000); // Change image every 2 seconds
+        setTimeout(showSlides, 10000); // Change image every 10 seconds
     }
 
     var arrow = document.getElementById("scroll-arrow");
