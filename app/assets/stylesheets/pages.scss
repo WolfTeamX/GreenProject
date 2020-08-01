@@ -772,6 +772,9 @@ footer {
 
 .footer-content {
   filter: brightness(1);
+  h2 {
+    margin-top: 10px;
+  }
 }
 
 .logo {
@@ -1448,16 +1451,6 @@ footer {
   }
 }
 
-@media (max-width: 1690px) {
-  .page-cover {
-    .cut-in {
-      &:after {
-        top:57%;
-      }
-    }
-  }
-}
-
 @media (max-width: 1600px) {
   .fifty {
     p {
@@ -1541,12 +1534,6 @@ footer {
     max-height: 18vh;
   }
 
-  .footer-background {
-    // TODO Fix footer height to fit content
-    height: 330px;
-    max-height: 15vh;
-  }
-
   .slide-banner {
     width: 480px;
     max-width: 480px;
@@ -1618,12 +1605,6 @@ footer {
     img {
       height: 55vh;
     }
-
-    .cut-in {
-      &:after {
-        top: 49%;
-      }
-    }
   }
 
   .contact {
@@ -1645,6 +1626,56 @@ footer {
     figure {
       img {
         opacity: 1 !important;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 160/89) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 58%;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 3/2) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 62%;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 6/5) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 44%;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 48%;
+      }
+    }
+  }
+}
+
+@media (max-aspect-ratio: 6/8) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 50%;
       }
     }
   }
