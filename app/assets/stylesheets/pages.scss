@@ -1688,6 +1688,25 @@ footer {
   }
 }
 
+@media (max-aspect-ratio: 5/8) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 51%;
+      }
+    }
+  }
+}
+@media (max-aspect-ratio: 3/8) {
+  .page-cover {
+    .cut-in {
+      &:after {
+        top: 53%;
+      }
+    }
+  }
+}
+
 .pagination {
   display: none;
 }
