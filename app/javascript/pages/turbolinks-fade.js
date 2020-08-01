@@ -49,7 +49,7 @@ document.addEventListener("turbolinks:load", function (event) {
     var pageYield = document.getElementById("yield");
 
     if (admin) {
-        $('input[type="submit"]').on("click", function () {
+        $('input[type="submit"]:not(.contact-submit)').on("click", function () {
             if(!pageYield.classList.contains("fading")){
                 pageYield.classList.add("fading");
                 lastVisitedPage = event.data.url;
