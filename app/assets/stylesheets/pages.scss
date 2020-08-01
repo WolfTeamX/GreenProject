@@ -1486,6 +1486,11 @@ footer {
 
 @media(max-width: 1279px)
 {
+  .fifty {
+    .offer-img {
+      filter: saturate(1);
+    }
+  }
   .voivodeships {
     .row {
       .thirty {
