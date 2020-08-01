@@ -752,7 +752,7 @@ footer {
   }
 
   p {
-    max-width: 300px;
+    max-width: 100%;
     font-size: 15px;
   }
 }
@@ -774,6 +774,15 @@ footer {
   filter: brightness(1);
   h2 {
     margin-top: 10px;
+  }
+  &.left {
+    width: 100%;
+    margin: 0 200px;
+  }
+
+  &.right {
+    width: 100%;
+    margin-right: 100px;
   }
 }
 
@@ -1556,6 +1565,11 @@ footer {
           top: 53%;
         }
       }
+    }
+  }
+  footer {
+    div {
+      margin: 0;
     }
   }
   .fifty {
