@@ -1419,6 +1419,10 @@ footer {
   }
 }
 
+.trix-content {
+  font-size: 22px;
+}
+
 @media (max-width: 2561px) {
   .offer-height {
     height: 930px;
@@ -1426,6 +1430,9 @@ footer {
 }
 
 @media (max-width: 1921px) {
+  .trix-content {
+    font-size: 20px;
+  }
   .offer-height {
     height: 800px;
   }
@@ -1460,6 +1467,9 @@ footer {
 }
 
 @media (max-width: 1367px) {
+  .trix-content {
+    font-size: 18px;
+  }
   .offer-height {
     height: 700px;
   }
