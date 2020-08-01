@@ -40,8 +40,11 @@
                 <%= image_tag rails_blob_path(certificate.image) %>
               <% end %>
               <% if user_signed_in? %>
-                <br><br><%= button_to "Usuń certyfikat", remove_certificate_path(certificate), class: "button button-success contact-submit" %><br><br>
-            <% end %>
+                <br><br><%= button_to "Usuń certyfikat", remove_certificate_path(certificate),
+                                      class: "button button-success contact-submit",
+                                      data: {confirm: "Jesteś pewien, że chcesz usunąć ten certyfikat?"} %>
+                <br><br>
+              <% end %>
             </div>
           <% end %>
         </div>

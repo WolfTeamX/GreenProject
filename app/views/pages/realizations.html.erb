@@ -40,8 +40,11 @@
                 <%= image_tag rails_blob_path(realization.image) %>
               <% end %>
               <% if user_signed_in? %>
-                <br><br><%= button_to "Usuń realizację", remove_realization_path(realization), class: "button button-success contact-submit" %><br><br>
-            <% end %>
+                <br><br><%= button_to "Usuń realizację", remove_realization_path(realization),
+                                      class: "button button-success contact-submit",
+                                      data: {confirm: "Jesteś pewien, że chcesz usunąć te realizację?"} %>
+                <br><br>
+              <% end %>
             </div>
           <% end %>
         </div>
