@@ -106,14 +106,4 @@ slides[0].image.attach(io: File.open(File.join(path, 'slides-1.jpg')), filename:
 slides[1].image.attach(io: File.open(File.join(path, 'slides-2.jpg')), filename: 'slides-2.jpg', content_type: 'image/jpg')
 slides[2].image.attach(io: File.open(File.join(path, 'slides-3.jpg')), filename: 'slides-3.jpg', content_type: 'image/jpg')
 
-7.times do |i|
-  name = i + 1
-  realization = Realization.new
-  realization.save
-  realization.image.attach(io: File.open(File.join(path, 'certificates', name.to_s + ".jpg")), filename: name.to_s + ".jpg", content_type: 'image/jpg')
-  certificate = Certificate.new
-  certificate.save
-  certificate.image.attach(io: File.open(File.join(path, 'certificates', name.to_s + ".jpg")), filename: name.to_s + ".jpg", content_type: 'image/jpg')
-end
-
-User.create(email: "admin@admin.admin", password: "zaq1@WSX", password_confirmation: "zaq1@WSX")
+User.create(email: ENV['GREENEVOLUTION_USERNAME'], password: ENV['GREENEVOLUTION_PASSWORD'], password_confirmation: ENV['GREENEVOLUTION_PASSWORD'])
