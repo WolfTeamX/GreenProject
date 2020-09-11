@@ -21,7 +21,8 @@ Bundler.require(*Rails.groups)
 
 module GreenEvolution
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
+    config.target_email = ''
+ # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
     config.to_prepare do
