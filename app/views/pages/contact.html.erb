@@ -84,11 +84,9 @@
     </div>
   </div>
 </section>
-<% if flash[:notice] == 'sent message' %>
-  <div id="overlay" class="overlay">
-    <div class="popup">
-      <h1>Sukces!</h1>
-      <p>Twoja wiadomość została wysłana.</p>
-    </div>
+<div id="overlay" class="overlay hidden">
+  <div class="popup">
+    <h1>Sukces!</h1>
+    <p>Twoja wiadomość została wysłana.</p>
   </div>
-<% end %>
+</div>

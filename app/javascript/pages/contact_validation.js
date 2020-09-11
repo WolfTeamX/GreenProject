@@ -2,15 +2,7 @@ let numbers = new RegExp('^[0-9]+$');
 
 document.addEventListener("turbolinks:load", function () {
 
-    var overlay = document.getElementById('overlay');
-    if (overlay) {
-        overlay.addEventListener("click", function() {
-           overlay.classList.add('hidden');
-        });
-        setTimeout(function () {
-            overlay.classList.add('hidden');
-        }, 10000);
-    }
+
 
     var form = document.forms["contact-form"];
 
