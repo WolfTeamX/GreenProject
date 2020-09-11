@@ -107,3 +107,5 @@ slides[1].image.attach(io: File.open(File.join(path, 'slides-2.jpg')), filename:
 slides[2].image.attach(io: File.open(File.join(path, 'slides-3.jpg')), filename: 'slides-3.jpg', content_type: 'image/jpg')
 
 User.create(email: ENV['GREENEVOLUTION_USERNAME'], password: ENV['GREENEVOLUTION_PASSWORD'], password_confirmation: ENV['GREENEVOLUTION_PASSWORD'])
+
+Rails.application.config.target_email = 'system@green-evolution.pl'

@@ -8,7 +8,7 @@ class MailController < ApplicationController
 
     respond_to do |format|
       UserMailer.with(name: @name, phone: @phone, email: @email, content: @content)
-          .system_message.deliver_now
+          .system_message.deliver_later
 
       format.html { redirect_to contact_path, notice: 'sent message' }
     end

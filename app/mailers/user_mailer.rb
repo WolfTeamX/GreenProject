@@ -6,6 +6,6 @@ class UserMailer < ApplicationMailer
     @email = params[:email]
     @content = params[:content]
 
-    mail(to: 'kanewers@gmail.com', subject: 'Green test')
+    mail(to: Rails.application.config.target_email, subject: 'Wiadomość z systemu GreenEvolution')
   end
 end
