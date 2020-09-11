@@ -6,11 +6,9 @@ class MailController < ApplicationController
     @email = params[:email]
     @content = params[:content]
 
-    respond_to do |format|
-      UserMailer.with(name: @name, phone: @phone, email: @email, content: @content)
-          .system_message.deliver_later
-
-      format.html { redirect_to contact_path, notice: 'sent message' }
-    end
+    UserMailer.with(name: @name, phone: @phone, email: @email, content: @content)
+        .system_message.deliver_later
+    
+    redirect_to contact_path, notice: 'sent message'
   end
 end
