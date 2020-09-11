@@ -1,6 +1,5 @@
 # Controls all pages on the website
 class PagesController < ApplicationController
-  require 'mail'
 
   def main_page
     @slides = Slide.all

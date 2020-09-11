@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Otrzymałeś nową wiadomość z systemu kontaktowego Green Evolution.</h1>
+
+<h4>
+  Imię: <%= @name.nil? ? "Nie podano" : @name %><br>
+  Telefon: <%= @phone.nil? ? "Nie podano" : @phone %><br>
+  Email: <%= @email %><br>
+</h4>
+<h4>
+  Treść wiadomości:
+</h4>
+<p><%= @content %></p>
+
+</body>
+</html>

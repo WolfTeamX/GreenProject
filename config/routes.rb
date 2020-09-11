@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get '/certyfikaty/' => 'pages#certificates', as: :certificates
   get '/sprzedaż/' => 'pages#sale', as: :sale
   get '/kontakt/' => 'pages#contact', as: :contact
-  post '/kontakt/' => 'pages#contact', as: :contact_post
 
   # Faqs
   get 'oferta/faq/:id' => 'pages#faq', as: :faq
@@ -76,6 +75,10 @@ Rails.application.routes.draw do
   # Contact
   get '/edytuj-kontakt/' => 'contact_info#edit', as: :edit_contact_info
   post '/edytuj-kontakt/' => 'contact_info#update', as: :update_contact_info
+
+  # Emails
+  post '/kontakt/wyslij-wiadomosc/' => 'mail#send_email', as: :send_email
+
 
   as :user do
     get 'login/' => 'devise/sessions#new', as: :login

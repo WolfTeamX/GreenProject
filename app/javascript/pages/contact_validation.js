@@ -1,6 +1,17 @@
 let numbers = new RegExp('^[0-9]+$');
 
 document.addEventListener("turbolinks:load", function () {
+
+    var overlay = document.getElementById('overlay');
+    if (overlay) {
+        overlay.addEventListener("click", function() {
+           overlay.classList.add('hidden');
+        });
+        setTimeout(function () {
+            overlay.classList.add('hidden');
+        }, 10000);
+    }
+
     var form = document.forms["contact-form"];
 
     if (form) {
@@ -16,9 +27,19 @@ document.addEventListener("turbolinks:load", function () {
             });
         });
 
-        form.addEventListener("submit", function (event) {
+        var submitButton = document.getElementById('form-submit');
+        submitButton.addEventListener('click', function (event) {
             if (validateForm(form)) {
-                // TODO Continue submit...
+                $.ajax({
+                    url: '/kontakt/wyslij-wiadomosc/',
+                    type: 'post',
+                    data: {
+                        name: document.getElementById("name").value,
+                        phone: document.getElementById("phone").value,
+                        email: document.getElementById("email").value,
+                        content: document.getElementById("content").value
+                    }
+                });
             } else {
                 event.preventDefault();
             }

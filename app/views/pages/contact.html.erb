@@ -29,28 +29,28 @@
       <div class="content">
         <h1>Napisz do nas</h1>
         <hr>
-        <%= form_with url: edit_sub_page_path, id: "contact-form" do |f| %>
+        <%= form_with id: "contact-form", remote: true do |f| %>
           <div class="row">
             <div class="fifty no-margin left">
               <%= f.label :name, "Imię:" %><br>
-              <%= f.text_field :name, placeholder: "Twoje imię (opcjonalnie)" %>
+              <%= f.text_field :name, id: "name", placeholder: "Twoje imię (opcjonalnie)" %>
             </div>
             <div class="fifty no-margin right">
               <%= f.label :phone, "Telefon:" %><br>
-              <%= f.text_field :phone, placeholder: "Twój numer (opcjonalnie)" %>
+              <%= f.text_field :phone, id: "phone", placeholder: "Twój numer (opcjonalnie)" %>
             </div>
           </div>
           <div class="row">
             <div class="fifty no-margin email">
               <%= f.label :email, "Email:" %><br>
-              <%= f.text_field :email, placeholder: "Twój adres email" %>
+              <%= f.text_field :email, id: "email", placeholder: "Twój adres email" %>
             </div>
           </div>
           <div class="row">
             <div class="hundred no-margin">
               <%= f.label :content, "Treść:" %><br>
-              <%= f.text_area :content, placeholder: "Treść wiadomości" %>
-              <%= f.submit "Wyślij wiadomość", class: "ghost-button contact-submit" %>
+              <%= f.text_area :content, id: "content", placeholder: "Treść wiadomości" %>
+              <%= f.submit "Wyślij wiadomość", id: 'form-submit', class: "ghost-button contact-submit" %>
             </div>
           </div>
         <% end %>
@@ -84,5 +84,11 @@
     </div>
   </div>
 </section>
-
-
+<% if flash[:notice] == 'sent message' %>
+  <div id="overlay" class="overlay">
+    <div class="popup">
+      <h1>Sukces!</h1>
+      <p>Twoja wiadomość została wysłana.</p>
+    </div>
+  </div>
+<% end %>
