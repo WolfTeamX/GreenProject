@@ -39,7 +39,9 @@ Rails.application.routes.draw do
 
   # Realizations
   get '/dodaj-realizacje/' => 'realizations#add', as: :add_realization
+  get '/edytuj-realizacje/' => 'realizations#edit', as: :edit_realization
   post '/dodaj-realizacje/' => 'realizations#create', as: :create_realization
+  post '/edytuj-realizacje/' => 'realizations#update', as: :update_realization
   post '/usun-realizacje/' => 'realizations#destroy_realization', as: :remove_realization
 
   # Certificates

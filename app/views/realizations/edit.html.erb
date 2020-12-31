@@ -1,0 +1,23 @@
+<div class="admin-edit">
+  <h1>Edytuj realizację</h1>
+  <hr>
+  <br>
+  <% if @realization.image.attached? %>
+    <%= image_tag rails_blob_path(@realization.image), class: "slide-image" %>
+  <% end %>
+  <% if @realization.description == nil || @realization.description.empty? %>
+    <h5>Brak opisu.</h5>
+  <% else %>
+    <h5><%= @realization.description %></h5>
+  <% end %>
+  <hr>
+  <br>
+  <%= form_with url: update_realization_path do |f| %>
+    <p>Aktualizuj zdjęcie:</p><br>
+    <%= f.file_field :image, multiple: true, direct_upload: true %><br><br>
+    <p>Opis:</p><br>
+    <%= f.text_field :description, :input_html => { :value => @realization.description } %><br><br>
+    <%= f.hidden_field :id, value: @realization.id %>
+    <%= f.submit "Zaktualizuj realizację", class: "button button-success" %>
+  <% end %>
+</div>

@@ -4,7 +4,10 @@ document.addEventListener("turbolinks:load", function () {
     var gallery = document.getElementById("gallery");
 
     if(gallery) {
-        window.tobii = new Tobii();
+        window.tobii = new Tobii({
+            captions: true
+        });
+
     }
 
     if ($('#infinite-scrolling')) {

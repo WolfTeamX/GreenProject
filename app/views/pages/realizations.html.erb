@@ -37,9 +37,10 @@
           <% group.each do |realization| %>
             <div class="col">
               <%= link_to rails_blob_path(realization.image), {class: "lightbox"} do %>
-                <%= image_tag rails_blob_path(realization.image) %>
+                <%= image_tag rails_blob_path(realization.image), :alt => realization.description %>
               <% end %>
               <% if user_signed_in? %>
+                <br><br><%= link_to "Zmień opis", edit_realization_path(realization), class: "button button-success" %>
                 <br><br><%= button_to "Usuń realizację", remove_realization_path(realization),
                                       class: "button button-success contact-submit",
                                       data: {confirm: "Jesteś pewien, że chcesz usunąć te realizację?"} %>
