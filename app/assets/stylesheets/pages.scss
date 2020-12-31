@@ -6,6 +6,8 @@
 @import "loader";
 @import "main";
 @import "../../../node_modules/tobii/dist/css/tobii";
+@import "select_box";
+@import "hover_image";
 
 $nav-height: 60px;
 $easeOut: cubic-bezier(0.175, 0.885, 0.320, 1.275);

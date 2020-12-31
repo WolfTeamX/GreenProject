@@ -1,0 +1,25 @@
+<div class="admin-edit">
+  <h1>Edytuj kategorię <%= @category.name %></h1>
+  <hr>
+  <br>
+  <% if @category.image.attached? %>
+    <%= image_tag rails_blob_path(@category.image), class: "slide-image" %>
+  <% end %>
+  <% if @category.description == nil || @category.description.empty? %>
+    <h5>Brak opisu.</h5>
+  <% else %>
+    <h5><%= @category.description %></h5>
+  <% end %>
+  <hr>
+  <br>
+  <%= form_with url: update_realization_category_path do |f| %>
+    <p>Aktualizuj zdjęcie:</p><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
+    <p>Nazwa:</p><br>
+    <%= f.text_field :name, :value => @category.name  %><br><br>
+    <p>Opis:</p><br>
+    <%= f.text_field :description, :value => @category.description %><br><br>
+    <%= f.hidden_field :id, value: @category.id %>
+    <%= f.submit "Zaktualizuj realizację", class: "button button-success" %>
+  <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_185422) do
+ActiveRecord::Schema.define(version: 2020_12_31_192325) do
 
   create_table "about_us_paragraphs", force: :cascade do |t|
     t.string "title"
@@ -115,10 +115,19 @@ ActiveRecord::Schema.define(version: 2020_12_30_185422) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "realization_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "realizations", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "description"
+    t.integer "realization_category_id", null: false
+    t.index ["realization_category_id"], name: "index_realizations_on_realization_category_id"
   end
 
   create_table "slides", force: :cascade do |t|
@@ -154,4 +163,5 @@ ActiveRecord::Schema.define(version: 2020_12_30_185422) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "faq_questions", "faq_pages"
+  add_foreign_key "realizations", "realization_categories"
 end

@@ -1,16 +1,28 @@
 class RealizationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def add
+    @categories = RealizationCategory.all.map { |category| [category.name, category.id] }
+  end
 
+  def show
+    @category = RealizationCategory.find(params[:id])
+    @realizations = @category.realizations.paginate(page: params[:page], per_page: 4).order('created_at DESC')
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
     params[:image].each do |image|
       realization = Realization.new
+      realization.realization_category = RealizationCategory.find(params[:category])
       realization.image.attach(image)
       realization.save
     end
+
     redirect_to realizations_path
   end
 

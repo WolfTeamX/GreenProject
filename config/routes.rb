@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/sprzedaż/' => 'pages#sale', as: :sale
   get '/kontakt/' => 'pages#contact', as: :contact
 
+  get 'realizacje/:id' => 'realizations#show', as: :realization_category
+
   # Faqs
   get 'oferta/faq/:id' => 'pages#faq', as: :faq
 
@@ -43,6 +45,10 @@ Rails.application.routes.draw do
   post '/dodaj-realizacje/' => 'realizations#create', as: :create_realization
   post '/edytuj-realizacje/' => 'realizations#update', as: :update_realization
   post '/usun-realizacje/' => 'realizations#destroy_realization', as: :remove_realization
+
+  # Realizations categories
+  get '/edytuj-kategorie/' => 'realization_categories#edit', as: :edit_realization_category
+  post '/edytuj-kategorie/' => 'realization_categories#update', as: :update_realization_category
 
   # Certificates
   get '/dodaj-certyfikat/' => 'certificates#add', as: :add_certificate

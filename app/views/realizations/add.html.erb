@@ -4,7 +4,9 @@
   <hr>
   <%= form_with url: create_realization_path do |f| %>
     <p>Dodaj zdjęcie/zdjęcia:</p><br>
-    <%= f.file_field :image, multiple: true, direct_upload: true %><br><br>
+    <%= f.file_field :image, multiple: true, direct_upload: true %><br><br><br>
+    <%= f.label "Wybierz kategorię:" %><br><br>
+    <%= f.select :category, options_for_select(@categories), {}, {:class => "select-css" } %><br><br>
     <%= f.submit "Dodaj realizację", class: "button button-success" %>
   <% end %>
 </div>

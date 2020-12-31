@@ -1,0 +1,58 @@
+<div class="page-cover">
+  <% if user_signed_in? %>
+    <%= link_to edit_realization_category_path(@category.id) do %>
+      <div class="side-control">
+        <p>Zmień<br>zdjęcie</p>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="cut-in">
+    <%= image_tag rails_blob_path(@category.image) if @category.image.attached? %>
+  </div>
+  <div class="header-text">
+    <div class="header-background">
+      <%= @category.name %>
+    </div>
+    <div id="scroll-arrow" class="arrow-hover">
+      <i class="arrow"></i>
+    </div>
+  </div>
+</div>
+<% if user_signed_in? %>
+  <div class="middle-button">
+    <%= link_to "Dodaj nową realizację", add_realization_path, class: "button button-success" %>
+  </div>
+<% end %>
+<section class="no-padding">
+  <div class="main-header">
+    <div id="scroll-target" class="header-hover">
+      <h2>Realizacje</h2>
+      <hr class="thematic-break">
+    </div>
+  </div>
+  <div id="gallery" class="container">
+    <div id="realizations">
+      <% @realizations.in_groups_of(4, false).each do |group| %>
+        <div class="row">
+          <% group.each do |realization| %>
+            <div class="col">
+              <%= link_to rails_blob_path(realization.image), {class: "lightbox"} do %>
+                <%= image_tag rails_blob_path(realization.image), :alt => realization.description %>
+              <% end %>
+              <% if user_signed_in? %>
+                <br><br><%= link_to "Zmień opis", edit_realization_path(realization), class: "button button-success" %>
+                <br><br><%= button_to "Usuń realizację", remove_realization_path(realization),
+                                      class: "button button-success contact-submit",
+                                      data: {confirm: "Jesteś pewien, że chcesz usunąć te realizację?"} %>
+                <br><br>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div id="infinite-scrolling">
+      <%= will_paginate @realizations, style: "display: none" %>
+    </div>
+  </div>
+</section>

@@ -8,6 +8,15 @@
 
 path = Rails.root.join('app', 'assets', 'images', 'seed')
 
+categories = RealizationCategory.create([{name: "Fotowoltaika", description: "Energia ze słońca"},
+                                         {name: "Klimatyzacje", description: "Dla twojego domu"},
+                                         {name: "Pompy ciepła", description: "Poczuj nową energię"},
+                                         {name: "Wymiana węgla na pompy ciepła", description: "Ekologiczna alternatywa"}])
+categories[0].image.attach(io: File.open(File.join(path, 'categories/photovoltaics.jpg')), filename: 'photovoltaics.jpg', content_type: 'image/jpg')
+categories[1].image.attach(io: File.open(File.join(path, 'categories/air_conditioning.jpg')), filename: 'air_conditioning.jpg', content_type: 'image/jpg')
+categories[2].image.attach(io: File.open(File.join(path, 'main-offer-heat-pumps.jpg')), filename: 'main-offer-heat-pumps.jpg', content_type: 'image/jpg')
+categories[3].image.attach(io: File.open(File.join(path, 'categories/pumps.jpg')), filename: 'pumps.jpg', content_type: 'image/jpg')
+
 footer = Footer.create(description: "Green Evolution to firma zajmująca się sprzedażą i instalacją systemów energetycznych, klimatyzacji oraz systemów grzewczych.")
 footer.image.attach(io: File.open(File.join(path, 'footer.jpg')), filename: 'footer.jpg', content_type: 'image/jpg')
 

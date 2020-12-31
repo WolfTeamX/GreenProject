@@ -26,33 +26,59 @@
 <section class="no-padding">
   <div class="main-header">
     <div id="scroll-target" class="header-hover">
-      <h2>Zobacz nasze realizacje</h2>
+      <h2>Wybierz kategorie</h2>
       <hr class="thematic-break">
     </div>
   </div>
-  <div id="gallery" class="container">
+  <div class="container">
+    <% @categories.in_groups_of(2, false).each do |group| %>
+      <div class="figure-grid">
+        <% group.each do |category| %>
+          <figure class="effect-lily">
+            <% if category.image.attached? %>
+              <%= image_tag rails_blob_path(category.image) %>
+            <% end %>
+            <figcaption>
+              <div>
+                <h2><%= category.name %></h2>
+                <p><%= category.description %></p>
+              </div>
+              <%= link_to "Zobacz więcej...", realization_category_path(category.id) %>
+            </figcaption>
+          </figure>
+          <% if user_signed_in? %>
+            <br><%= link_to "Edytuj kategorię", edit_realization_category_path(category.id), class: "button button-success", style: "display: inline-table" %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <!--  <div id="gallery" class="container">
     <div id="realizations">
-      <% @realizations.in_groups_of(4, false).each do |group| %>
+      <%# @realizations.in_groups_of(4, false).each do |group| %>
         <div class="row">
-          <% group.each do |realization| %>
+          <%# group.each do |realization| %>
             <div class="col">
-              <%= link_to rails_blob_path(realization.image), {class: "lightbox"} do %>
-                <%= image_tag rails_blob_path(realization.image), :alt => realization.description %>
-              <% end %>
-              <% if user_signed_in? %>
-                <br><br><%= link_to "Zmień opis", edit_realization_path(realization), class: "button button-success" %>
-                <br><br><%= button_to "Usuń realizację", remove_realization_path(realization),
+              <%#= link_to rails_blob_path(realization.image), {class: "lightbox"} do %>
+                <%#= image_tag rails_blob_path(realization.image), :alt => realization.description %>
+              <%# end %>
+              <%# if user_signed_in? %>
+                <br><br><%#= link_to "Zmień opis", edit_realization_path(realization), class: "button button-success" %>
+                <br><br><%#= button_to "Usuń realizację", remove_realization_path(realization),
                                       class: "button button-success contact-submit",
                                       data: {confirm: "Jesteś pewien, że chcesz usunąć te realizację?"} %>
                 <br><br>
-              <% end %>
+              <%# end %>
             </div>
-          <% end %>
+          <%# end %>
         </div>
-      <% end %>
+      <%# end %>
     </div>
     <div id="infinite-scrolling">
-      <%= will_paginate @realizations, style: "display: none" %>
+      <%#= will_paginate @realizations, style: "display: none" %>
     </div>
-  </div>
+  </div>-->
+
+
 </section>

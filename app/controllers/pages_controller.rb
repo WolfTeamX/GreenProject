@@ -20,6 +20,7 @@ class PagesController < ApplicationController
   end
 
   def realizations
+    @categories = RealizationCategory.all
     @realizations = Realization.paginate(page: params[:page], per_page: 4).order('created_at DESC')
     @page = SubPage.find(3)
 
