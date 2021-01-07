@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def display_error
+    redirect_to root_path, alert: "Wystąpił nieoczekiwany błąd."
+  end
 end

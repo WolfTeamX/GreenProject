@@ -12,6 +12,11 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
+<% flash.each do |type, msg| %>
+  <div id="error-notice" class="error-notice">
+    <p><%= msg %></p>
+  </div>
+<% end %>
 <div id="css-loader" class="lds-ellipsis">
   <div></div>
   <div></div>
