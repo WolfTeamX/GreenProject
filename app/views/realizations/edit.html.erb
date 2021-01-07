@@ -14,7 +14,7 @@
   <br>
   <%= form_with url: update_realization_path do |f| %>
     <p>Aktualizuj zdjęcie:</p><br>
-    <%= f.file_field :image, multiple: true, direct_upload: true %><br><br>
+    <%= f.file_field :image, direct_upload: true %><br><br>
     <p>Opis:</p><br>
     <%= f.text_field :description, :input_html => { :value => @realization.description } %><br><br>
     <%= f.hidden_field :id, value: @realization.id %>
