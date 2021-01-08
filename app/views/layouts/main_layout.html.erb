@@ -14,7 +14,8 @@
 <body>
 <% flash.each do |type, msg| %>
   <div id="error-notice" class="error-notice">
-    <p><%= msg %></p>
+    <h5><%= msg %></h5>
+    <p>(Kliknij aby zamknąć)</p>
   </div>
 <% end %>
 <div id="css-loader" class="lds-ellipsis">
