@@ -48,8 +48,8 @@ document.addEventListener("turbolinks:load", function () {
     let errorNotice = document.getElementById("error-notice");
 
     if (errorNotice) {
-        setInterval(function() {
+        errorNotice.addEventListener("click", function() {
             errorNotice.classList.add("hidden");
-        }, 4000);
+        });
     }
 });
