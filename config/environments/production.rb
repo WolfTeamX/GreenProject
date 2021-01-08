@@ -14,6 +14,17 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  config.action_mailer.smtp_settings = {
+      :address => ENV["MAIL_SERVER"],
+      :port => ENV["MAIL_PORT"],
+      :domain => 'green-evolution.pl',
+      :user_name => ENV["GMAIL_USERNAME"],
+      :password => ENV["GMAIL_PASSWORD"],
+      :authentication => :login,
+      :openssl_verify_mode => 'none',
+      :tls => true
+  }
+
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
