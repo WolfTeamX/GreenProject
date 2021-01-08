@@ -1,0 +1,2 @@
+pl:
+  unexpected_error: "Wystąpił nieoczekiwany bład: %{error}"

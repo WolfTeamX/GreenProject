@@ -25,6 +25,9 @@ module GreenEvolution
  # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+ # Change default locale to PL
+    config.i18n.default_locale = :pl
+
     config.to_prepare do
       Devise::SessionsController.layout "devise"
       Devise::RegistrationsController.layout "devise"
