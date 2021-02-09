@@ -22,11 +22,17 @@ Bundler.require(*Rails.groups)
 module GreenEvolution
   class Application < Rails::Application
     config.target_email = 'system@green-evolution.pl'
- # Initialize configuration defaults for originally generated Rails version.
+    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
- # Change default locale to PL
+    # Change default locale to PL
     config.i18n.default_locale = :pl
+
+    # Rails will fallback to config.i18n.default_locale translation
+    config.i18n.fallbacks = true
+
+    # Rails will fallback to en, no matter what is set as config.i18n.default_locale
+    config.i18n.fallbacks = [:en]
 
     config.to_prepare do
       Devise::SessionsController.layout "devise"
