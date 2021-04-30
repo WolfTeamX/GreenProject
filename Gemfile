@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '2.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.3.4'
+gem 'rails', '~> 6.1.3.1'
 # Use sqlite as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -22,7 +22,7 @@ gem 'will_paginate', '~> 3.1.0'
 # Use image_processing for image formatting
 gem 'image_processing'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
+# gem 'jbuilder', '~> 2.7'n
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
