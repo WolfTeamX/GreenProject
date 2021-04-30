@@ -13,8 +13,10 @@ threads min_threads_count, max_threads_count
 port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
-#
+# Development
 environment ENV.fetch("RAILS_ENV") { "development" }
+# Production
+# environment ENV.fetch("RAILS_ENV") { "production" }
 
 # Specifies the `pidfile` that Puma will use.
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
