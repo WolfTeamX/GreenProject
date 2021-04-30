@@ -1,5 +1,6 @@
 # Main application controller
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
   rescue_from StandardError, with: :display_error
 
   layout 'main_layout'
