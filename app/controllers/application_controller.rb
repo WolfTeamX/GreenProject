@@ -17,6 +17,14 @@ class ApplicationController < ActionController::Base
     false
   end
 
+  def default_url_options
+    if ENV.fetch('FORCE_SSL', false)
+      { host: 'green-evolution.pl', protocol: 'https' }
+    else
+      { host: 'localhost:3000', protocol: 'http' }
+    end
+  end
+
   def display_error(exception)
     if user_signed_in?
       redirect_to root_path, alert: I18n.t('unexpected_error', error: exception)
