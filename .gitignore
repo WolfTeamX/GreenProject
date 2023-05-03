@@ -78,4 +78,5 @@ yarn-debug.log*
 /public/uploads
 config/local_env.yml
 GreenEvolution_production
-package-lock.json
+config/environments/production.rb
+start_green_evo.sh
