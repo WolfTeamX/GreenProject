@@ -1,7 +1,6 @@
 # Main application controller
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception, unless: -> { request.format.json? }
-  rescue_from StandardError, with: :display_error
 
   layout 'main_layout'
 
@@ -22,14 +21,6 @@ class ApplicationController < ActionController::Base
       { host: 'green-evolution.pl', protocol: 'https' }
     else
       { host: 'localhost:3000', protocol: 'http' }
-    end
-  end
-
-  def display_error(exception)
-    if user_signed_in?
-      redirect_to root_path, alert: I18n.t('unexpected_error', error: exception)
-    else
-      redirect_to root_path
     end
   end
 end
